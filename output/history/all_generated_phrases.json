@@ -299,7 +299,37 @@
       "chinese": "伸出援手, 无需多言",
       "category": "Kindness",
       "generated_at": "2026-03-11T16:38:53.445829"
+    },
+    {
+      "english": "You got this, one step at a time",
+      "chinese": "你可以的，一步一步来",
+      "category": "Confidence",
+      "generated_at": "2026-03-11T19:34:10.183576"
+    },
+    {
+      "english": "Small progress, big confidence",
+      "chinese": "小进步，大自信",
+      "category": "Confidence",
+      "generated_at": "2026-03-11T19:34:10.183584"
+    },
+    {
+      "english": "Mistakes are lessons, keep going",
+      "chinese": "错误是教训，继续前行",
+      "category": "Confidence",
+      "generated_at": "2026-03-11T19:34:10.183586"
+    },
+    {
+      "english": "Breathe, try again",
+      "chinese": "深呼吸，再试一次",
+      "category": "Confidence",
+      "generated_at": "2026-03-11T19:34:10.183587"
+    },
+    {
+      "english": "Believe, your voice matters",
+      "chinese": "相信自己，你的声音重要",
+      "category": "Confidence",
+      "generated_at": "2026-03-11T19:34:10.183588"
     }
   ],
-  "last_updated": "2026-03-11T16:38:53.445831"
+  "last_updated": "2026-03-11T19:34:10.183594"
 }
