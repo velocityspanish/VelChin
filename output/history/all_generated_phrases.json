@@ -239,7 +239,37 @@
       "chinese": "坚定不移，相信你的心",
       "category": "Strength",
       "generated_at": "2026-03-10T21:03:56.313937"
+    },
+    {
+      "english": "Thank you, for understanding me",
+      "chinese": "谢谢你，理解我",
+      "category": "Forgiveness",
+      "generated_at": "2026-03-11T05:03:54.973006"
+    },
+    {
+      "english": "I forgive myself, I'm learning",
+      "chinese": "我原谅自己，我在学习",
+      "category": "Forgiveness",
+      "generated_at": "2026-03-11T05:03:54.973015"
+    },
+    {
+      "english": "Let's forget it, move forward",
+      "chinese": "别放在心上，往前走",
+      "category": "Forgiveness",
+      "generated_at": "2026-03-11T05:03:54.973021"
+    },
+    {
+      "english": "I understand, it's not easy",
+      "chinese": "我理解，这并不容易",
+      "category": "Forgiveness",
+      "generated_at": "2026-03-11T05:03:54.973022"
+    },
+    {
+      "english": "Please forgive me, I care",
+      "chinese": "请原谅我，我在乎",
+      "category": "Forgiveness",
+      "generated_at": "2026-03-11T05:03:54.973023"
     }
   ],
-  "last_updated": "2026-03-10T21:03:56.313939"
+  "last_updated": "2026-03-11T05:03:54.973025"
 }
