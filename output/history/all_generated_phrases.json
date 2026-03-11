@@ -329,7 +329,37 @@
       "chinese": "相信自己，你的声音重要",
       "category": "Confidence",
       "generated_at": "2026-03-11T19:34:10.183588"
+    },
+    {
+      "english": "Start now, finish stronger",
+      "chinese": "现在开始，更加出色",
+      "category": "Success",
+      "generated_at": "2026-03-11T21:03:03.536460"
+    },
+    {
+      "english": "One step today, big gains tomorrow",
+      "chinese": "今日一小步，明日大收获",
+      "category": "Success",
+      "generated_at": "2026-03-11T21:03:03.536470"
+    },
+    {
+      "english": "Keep going, progress follows",
+      "chinese": "坚持前行，进步随之",
+      "category": "Success",
+      "generated_at": "2026-03-11T21:03:03.536471"
+    },
+    {
+      "english": "Learn, adapt, then conquer",
+      "chinese": "学习，适应，然后征服",
+      "category": "Success",
+      "generated_at": "2026-03-11T21:03:03.536472"
+    },
+    {
+      "english": "Fail fast, improve faster",
+      "chinese": "快速失败，更快改进",
+      "category": "Success",
+      "generated_at": "2026-03-11T21:03:03.536473"
     }
   ],
-  "last_updated": "2026-03-11T19:34:10.183594"
+  "last_updated": "2026-03-11T21:03:03.536479"
 }
