@@ -359,7 +359,37 @@
       "chinese": "快速失败，更快改进",
       "category": "Success",
       "generated_at": "2026-03-11T21:03:03.536473"
+    },
+    {
+      "english": "Keep going, even if it's slow",
+      "chinese": "继续前进，哪怕很慢",
+      "category": "Perseverance",
+      "generated_at": "2026-03-12T05:09:03.253285"
+    },
+    {
+      "english": "Small steps, big progress ahead",
+      "chinese": "小步走，大有进步",
+      "category": "Perseverance",
+      "generated_at": "2026-03-12T05:09:03.253294"
+    },
+    {
+      "english": "One more try, you can do it",
+      "chinese": "再试一次，你能做到",
+      "category": "Perseverance",
+      "generated_at": "2026-03-12T05:09:03.253295"
+    },
+    {
+      "english": "Stay patient, results will come",
+      "chinese": "保持耐心，结果会来",
+      "category": "Perseverance",
+      "generated_at": "2026-03-12T05:09:03.253296"
+    },
+    {
+      "english": "Learn, fail, repeat, become stronger",
+      "chinese": "学、败、再来，变得更强",
+      "category": "Perseverance",
+      "generated_at": "2026-03-12T05:09:03.253298"
     }
   ],
-  "last_updated": "2026-03-11T21:03:03.536479"
+  "last_updated": "2026-03-12T05:09:03.253299"
 }
