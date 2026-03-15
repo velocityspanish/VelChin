@@ -719,7 +719,37 @@
       "chinese": "好消息，大家庆祝",
       "category": "Joy",
       "generated_at": "2026-03-14T20:56:47.309210"
+    },
+    {
+      "english": "Wait calmly, things will settle",
+      "chinese": "耐心等待，事情会平静",
+      "category": "Patience",
+      "generated_at": "2026-03-15T15:00:58.376749"
+    },
+    {
+      "english": "Take a breath, then continue",
+      "chinese": "深呼吸，然后继续",
+      "category": "Patience",
+      "generated_at": "2026-03-15T15:00:58.376758"
+    },
+    {
+      "english": "Small steps, steady progress",
+      "chinese": "小步前行，稳步进步",
+      "category": "Patience",
+      "generated_at": "2026-03-15T15:00:58.376759"
+    },
+    {
+      "english": "Hold on, good things take time",
+      "chinese": "坚持住，好事需要时间",
+      "category": "Patience",
+      "generated_at": "2026-03-15T15:00:58.376760"
+    },
+    {
+      "english": "One day, one step, keep going",
+      "chinese": "一日一步，继续前行",
+      "category": "Patience",
+      "generated_at": "2026-03-15T15:00:58.376762"
     }
   ],
-  "last_updated": "2026-03-14T20:56:47.309212"
+  "last_updated": "2026-03-15T15:00:58.376763"
 }
