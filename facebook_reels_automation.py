@@ -712,20 +712,22 @@ def generate_complete_image(phrase_data: dict, category_english: str, output_pat
     draw = ImageDraw.Draw(img)
 
     # Load fonts - BOLDER and LARGER for better visibility
-    # English fonts (EXTRA BOLD)
+    # English fonts (EXTRA BOLD) - Linux priority for GitHub Actions
     english_font_paths = [
-        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",  # Linux (GitHub Actions)
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",  # Linux (GitHub Actions) - PRIORITY
         "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",  # Alternative Linux
+        "/usr/share/fonts/truetype/freefont/FreeSansBold.ttf",  # Another Linux option
         "C:/Windows/Fonts/arialbd.ttf",  # Windows Arial Bold
         "C:/Windows/Fonts/segoeusbi.ttf",  # Windows Segoe UI Semibold
     ]
 
-    # Chinese fonts (EXTRA BOLD for better visibility)
+    # Chinese fonts (EXTRA BOLD for better visibility) - Linux priority for GitHub Actions
     chinese_font_paths = [
-        "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",  # Linux (GitHub Actions) - EXTRA BOLD
-        "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",  # Alternative Linux EXTRA BOLD
-        "/usr/share/fonts/truetype/wqy/wqy-microhei.ttc",  # Alternative Linux
-        "C:/Windows/Fonts/msyhbd.ttc",  # Windows Microsoft YaHei BOLD (priority for Windows)
+        "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",  # Linux WenQuanYi Zen Hei (GitHub Actions) - PRIORITY
+        "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",  # Linux Noto CJK Bold
+        "/usr/share/fonts/truetype/wqy/wqy-microhei.ttc",  # Linux WenQuanYi Micro Hei
+        "/usr/share/fonts/noto-cjk/NotoSansCJK-Bold.ttc",  # Alternative Linux Noto
+        "C:/Windows/Fonts/msyhbd.ttc",  # Windows Microsoft YaHei BOLD
         "C:/Windows/Fonts/simsun.ttc",  # Windows SimSun
     ]
 
@@ -747,7 +749,7 @@ def generate_complete_image(phrase_data: dict, category_english: str, output_pat
     font_chinese = load_font(chinese_font_paths, 85)
 
     # Pinyin fonts - EXTRA BOLD and LARGER (use BOLD Chinese fonts)
-    font_pinyin = load_font(chinese_font_paths, 65)  # Increased to 65 for BOLDER look
+    font_pinyin = load_font(chinese_font_paths, 65)
 
     english = phrase_data.get("english", "")
     chinese = phrase_data.get("chinese", "")
@@ -791,20 +793,21 @@ def generate_complete_image(phrase_data: dict, category_english: str, output_pat
         stroke_fill=(0, 0, 0)
     )
 
-    # English text - with LARGER solid background container
+    # English text - with solid background container
     english_y = 520
-    english_lines = wrap_text(english, font_large, VIDEO_WIDTH - 160)  # More margin for safety
-    line_spacing = 100  # Increased spacing
+    # Use safer max_width to prevent overflow on all systems
+    english_lines = wrap_text(english, font_large, VIDEO_WIDTH - 200)  # Extra safe margin
+    line_spacing = 100
     total_height = len(english_lines) * line_spacing
 
     # Calculate container size BEFORE drawing
     box_top = english_y - 70
     box_bottom = english_y + total_height + 30
 
-    # Solid background box for English (dark blue) - LARGER container
+    # Solid background box for English (dark blue) - wider container
     draw.rectangle(
-        [(80, box_top), (VIDEO_WIDTH - 80, box_bottom)],  # Wider margins
-        fill=(30, 40, 80, 240)  # More opaque
+        [(100, box_top), (VIDEO_WIDTH - 100, box_bottom)],  # 100px margins (was 70px)
+        fill=(30, 40, 80, 240)
     )
 
     for i, line in enumerate(english_lines):
@@ -819,19 +822,20 @@ def generate_complete_image(phrase_data: dict, category_english: str, output_pat
             stroke_fill=(0, 0, 0)
         )
 
-    # Chinese text - with LARGER container and BOLDER font
+    # Chinese text - with BOLDER font and wider container
     chinese_y = english_y + total_height + 130
-    chinese_lines = wrap_text(chinese, font_chinese, VIDEO_WIDTH - 140)  # Safe width
+    # Use safer max_width to prevent overflow on all systems (especially Linux)
+    chinese_lines = wrap_text(chinese, font_chinese, VIDEO_WIDTH - 180)  # Extra safe margin
     total_height = len(chinese_lines) * line_spacing
 
     # Calculate container size BEFORE drawing
     box_top = chinese_y - 70
     box_bottom = chinese_y + total_height + 30
 
-    # Solid background box for Chinese (warm brown/red) - LARGER container
+    # Solid background box for Chinese (warm brown/red) - wider container
     draw.rectangle(
-        [(70, box_top), (VIDEO_WIDTH - 70, box_bottom)],  # Safe margins
-        fill=(85, 45, 45, 240)  # More opaque
+        [(90, box_top), (VIDEO_WIDTH - 90, box_bottom)],  # 90px margins (was 70px)
+        fill=(85, 45, 45, 240)
     )
 
     for i, line in enumerate(chinese_lines):
