@@ -1139,7 +1139,37 @@
       "chinese": "有问题，去问。",
       "category": "Purpose",
       "generated_at": "2026-03-19T16:12:29.148315"
+    },
+    {
+      "english": "Mistake made, no big deal.",
+      "chinese": "犯错, 没关系。",
+      "category": "Motivation",
+      "generated_at": "2026-03-19T18:11:26.914607"
+    },
+    {
+      "english": "Try again, much better.",
+      "chinese": "再试一次, 好很多。",
+      "category": "Motivation",
+      "generated_at": "2026-03-19T18:11:26.914619"
+    },
+    {
+      "english": "Word wrong? No problem.",
+      "chinese": "单词错? 没问题。",
+      "category": "Motivation",
+      "generated_at": "2026-03-19T18:11:26.914621"
+    },
+    {
+      "english": "Just say it, we'll learn.",
+      "chinese": "就说吧, 我们学。",
+      "category": "Motivation",
+      "generated_at": "2026-03-19T18:11:26.914623"
+    },
+    {
+      "english": "Pronounce strange? We fix.",
+      "chinese": "发音怪? 我们改。",
+      "category": "Motivation",
+      "generated_at": "2026-03-19T18:11:26.914626"
     }
   ],
-  "last_updated": "2026-03-19T16:12:29.148317"
+  "last_updated": "2026-03-19T18:11:26.914628"
 }
