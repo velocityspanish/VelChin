@@ -1109,7 +1109,37 @@
       "chinese": "我真傻.  就一笔勾销吧.",
       "category": "Forgiveness",
       "generated_at": "2026-03-19T10:48:50.483217"
+    },
+    {
+      "english": "Learn the language, find new worlds.",
+      "chinese": "学语言，开新世界。",
+      "category": "Purpose",
+      "generated_at": "2026-03-19T16:12:29.148302"
+    },
+    {
+      "english": "Speak a little, practice a lot.",
+      "chinese": "少说点，多练习。",
+      "category": "Purpose",
+      "generated_at": "2026-03-19T16:12:29.148312"
+    },
+    {
+      "english": "Listen more, understand deeper.",
+      "chinese": "多听听，懂更深。",
+      "category": "Purpose",
+      "generated_at": "2026-03-19T16:12:29.148313"
+    },
+    {
+      "english": "Mistakes happen, that's how we grow.",
+      "chinese": "犯错啊，成长路。",
+      "category": "Purpose",
+      "generated_at": "2026-03-19T16:12:29.148314"
+    },
+    {
+      "english": "Ask questions, get answers.",
+      "chinese": "有问题，去问。",
+      "category": "Purpose",
+      "generated_at": "2026-03-19T16:12:29.148315"
     }
   ],
-  "last_updated": "2026-03-19T10:48:50.483219"
+  "last_updated": "2026-03-19T16:12:29.148317"
 }
