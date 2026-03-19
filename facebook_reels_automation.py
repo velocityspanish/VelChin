@@ -1071,6 +1071,27 @@ def generate_reel(category_english: str = None):
     return metadata
 
 
+def generate_daily_content(times_per_day: int = 5):
+    """
+    Generate multiple reels per day (for GitHub Actions scheduled runs)
+    
+    Args:
+        times_per_day: Number of reels to generate (default: 5)
+    """
+    print(f"\n🎬 Generating {times_per_day} reels for today...")
+    print("="*80)
+    
+    for i in range(times_per_day):
+        print(f"\n{'='*80}")
+        print(f"🎬 REEL {i+1}/{times_per_day}")
+        print("="*80)
+        generate_reel()
+    
+    print("\n" + "="*80)
+    print(f"✅ ALL {times_per_day} REELS COMPLETE!")
+    print("="*80)
+
+
 if __name__ == "__main__":
     print("\n" + "="*80)
     print("🇨🇳 VELOCITY CHINESE - FACEBOOK REELS AUTOMATION 🇨🇳")
@@ -1086,8 +1107,8 @@ if __name__ == "__main__":
     for i, cat in enumerate(CATEGORIES_ENGLISH, 1):
         print(f"   {i:2d}. {cat} ({CATEGORIES_CHINESE[cat]})")
     print(f"\n📅 DAILY CAPACITY:")
-    print(f"  • 4 reels per day = 20 unique phrases daily")
-    print(f"  • {len(CATEGORIES_ENGLISH)} categories = Over 6 days before any category repeats")
+    print(f"  • 5 reels per day = 25 unique phrases daily")
+    print(f"  • {len(CATEGORIES_ENGLISH)} categories = Over 5 days before any category repeats")
     print(f"  • Phrase history is PERMANENT (never deletes)")
     print(f"  • AI generates FRESH phrases every time")
     print("="*80)
@@ -1097,9 +1118,9 @@ if __name__ == "__main__":
     print("\n" + "="*80)
     print("✅ READY FOR DAILY AUTOMATION!")
     print("="*80)
-    print("\nTo generate 4 reels for today:")
+    print("\nTo generate 5 reels for today:")
     print("  from facebook_reels_automation import generate_daily_content")
-    print("  generate_daily_content(times_per_day=4)")
+    print("  generate_daily_content(times_per_day=5)")
     print("\nTo generate a single reel:")
     print("  generate_reel('Love')  # Or any category from the list above")
     print("="*80)
