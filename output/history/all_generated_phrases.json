@@ -1079,7 +1079,37 @@
       "chinese": "拥抱改变, 它让你强大。",
       "category": "Positive Life",
       "generated_at": "2026-03-19T10:41:12.956593"
+    },
+    {
+      "english": "Oops, my bad.  Let's just forget it.",
+      "chinese": "哎呀, 我的错.  就当没发生.",
+      "category": "Forgiveness",
+      "generated_at": "2026-03-19T10:48:50.483204"
+    },
+    {
+      "english": "I messed up.  Can we rewind?",
+      "chinese": "我搞砸了.  能倒带吗?",
+      "category": "Forgiveness",
+      "generated_at": "2026-03-19T10:48:50.483214"
+    },
+    {
+      "english": "My mistake, okay?  Let's move on.",
+      "chinese": "我错了, 好吧?  继续前进.",
+      "category": "Forgiveness",
+      "generated_at": "2026-03-19T10:48:50.483215"
+    },
+    {
+      "english": "It was dumb.  Please forgive me, yeah?",
+      "chinese": "太傻了.  原谅我吧, 好吗?",
+      "category": "Forgiveness",
+      "generated_at": "2026-03-19T10:48:50.483216"
+    },
+    {
+      "english": "Silly me.  Let's chalk it up.",
+      "chinese": "我真傻.  就一笔勾销吧.",
+      "category": "Forgiveness",
+      "generated_at": "2026-03-19T10:48:50.483217"
     }
   ],
-  "last_updated": "2026-03-19T10:41:12.956594"
+  "last_updated": "2026-03-19T10:48:50.483219"
 }
