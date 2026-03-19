@@ -81,6 +81,31 @@ CHINESE_VOICE = "zh-CN-XiaoxiaoNeural"
 # Phrase history file (NEVER delete this!)
 PHRASE_HISTORY_FILE = HISTORY_DIR / "all_generated_phrases.json"
 
+# Viral hook styles for engagement (like Spanish bot)
+VIRAL_STYLES = [
+    "surprising fact",
+    "common mistake correction",
+    "quick tip",
+    "must-know phrase",
+    "local secret",
+    "travel hack",
+    "flirty phrase",
+    "funny expression",
+    "cultural insight",
+    "word origin story"
+]
+
+# AI Model - MUST be set in .env file (NO HARDCODED DEFAULT)
+# Add AI_MODEL=gemini-fast to your .env file
+# GitHub Actions: Add AI_MODEL to repository secrets
+AI_MODEL = os.getenv("AI_MODEL")
+
+if not AI_MODEL:
+    raise ValueError(
+        "AI_MODEL not set! Please add 'AI_MODEL=gemini-fast' to your .env file. "
+        "For GitHub Actions: Add AI_MODEL to repository secrets."
+    )
+
 
 # ============== PHRASE HISTORY MANAGEMENT (Prevent Repeats) ==============
 
@@ -100,13 +125,65 @@ def save_phrase_history(data):
 
 
 def is_phrase_used(english_phrase):
-    """Check if phrase was already generated"""
+    """Check if phrase was already generated (exact match)"""
     history = load_phrase_history()
     english_lower = english_phrase.lower().strip()
     for p in history.get("phrases", []):
         if p.get("english", "").lower().strip() == english_lower:
             return True
     return False
+
+
+def is_phrase_similar(new_phrase, used_phrases, similarity_threshold=0.6):
+    """
+    Check if a phrase is too similar to previously used phrases
+    Simple word-based Jaccard similarity check
+    
+    Lower threshold (0.6) means stricter duplicate detection
+    """
+    new_words = set(new_phrase.lower().split())
+    
+    # Skip very short phrases - use substring match
+    if len(new_words) < 3:
+        for used in used_phrases:
+            if new_phrase.lower() in used.lower() or used.lower() in new_phrase.lower():
+                return True
+        return False
+    
+    for used in used_phrases:
+        used_words = set(used.lower().split())
+        
+        if len(new_words) == 0 or len(used_words) == 0:
+            continue
+        
+        # Calculate Jaccard similarity
+        intersection = len(new_words.intersection(used_words))
+        union = len(new_words.union(used_words))
+        similarity = intersection / union if union > 0 else 0
+        
+        if similarity >= similarity_threshold:
+            return True
+    
+    return False
+
+
+def filter_similar_phrases(phrases, history, similarity_threshold=0.6):
+    """
+    Filter out phrases that are too similar to previously used ones
+    Returns list of unique phrases
+    """
+    used_phrases = [p.get("english", "") for p in history.get("phrases", [])]
+    unique_phrases = []
+    
+    for phrase in phrases:
+        english_text = phrase.get("english", "")
+        
+        if not is_phrase_similar(english_text, used_phrases, similarity_threshold):
+            unique_phrases.append(phrase)
+        else:
+            print(f"[filter] ⚠️ Skipping similar: {english_text[:50]}...")
+    
+    return unique_phrases
 
 
 def add_phrases_to_history(phrases, category):
@@ -128,7 +205,16 @@ def add_phrases_to_history(phrases, category):
 def generate_phrases(category_english: str, num_phrases: int = 5) -> list:
     """Generate unique bilingual phrases with natural pauses, ensuring no repeats"""
 
+    import random
+    
     category_chinese = CATEGORIES_CHINESE[category_english]
+    
+    # Load history to get used phrases
+    history = load_phrase_history()
+    used_phrases = [p.get("english", "") for p in history.get("phrases", [])]
+    
+    # Pick a viral style for variety
+    viral_style = random.choice(VIRAL_STYLES)
 
     # Try AI first
     max_attempts = 3
@@ -141,7 +227,15 @@ def generate_phrases(category_english: str, num_phrases: int = 5) -> list:
                 "Content-Type": "application/json"
             }
 
+            # Build exclusion list from used phrases (last 20)
+            exclusion_note = ""
+            if used_phrases and len(used_phrases) > 0:
+                recent = used_phrases[-20:] if len(used_phrases) > 20 else used_phrases
+                exclusion_note = f"\n\nAVOID these phrases (already used): {recent}"
+
             prompt = f"""Create {num_phrases * 2} unique {category_english} phrases for English speakers learning Chinese (Mandarin).
+
+Style: Make each phrase feel like a {viral_style} - something people would want to share!
 
 IMPORTANT RULES FOR NATURAL SPEECH:
 1. Keep phrases SHORT (5-12 words max per language)
@@ -149,6 +243,8 @@ IMPORTANT RULES FOR NATURAL SPEECH:
 3. Use punctuation for breathing room in TTS
 4. Avoid long run-on sentences
 5. Each phrase should be speakable in 3-5 seconds
+6. Use everyday vocabulary - avoid exotic or rare words
+7. Avoid complex grammar - keep it simple and practical
 
 For each phrase:
 1. English phrase (with commas for natural pauses)
@@ -158,15 +254,15 @@ For each phrase:
 Return as JSON array:
 [{{"english": "...", "chinese": "...", "pinyin": "..."}}]
 
-IMPORTANT: Create FRESH, UNIQUE phrases that haven't been used before."""
+IMPORTANT: Create FRESH, UNIQUE phrases that haven't been used before.{exclusion_note}"""
 
             payload = {
-                "model": "openai",
+                "model": AI_MODEL,
                 "messages": [
-                    {"role": "system", "content": "You are a Chinese teacher. Create short, natural phrases with pauses."},
+                    {"role": "system", "content": "You are a viral Chinese teacher creating engaging educational content for social media. Create short, natural phrases with pauses."},
                     {"role": "user", "content": prompt}
                 ],
-                "temperature": 0.9
+                "temperature": 1.0  # Maximum creativity for unique content
             }
 
             response = requests.post(url, headers=headers, json=payload, timeout=60)
@@ -183,12 +279,16 @@ IMPORTANT: Create FRESH, UNIQUE phrases that haven't been used before."""
 
             phrases = json.loads(content)
 
-            # Filter out already-used phrases and ensure proper length
+            # First filter by similarity (stricter check)
+            filtered_phrases = filter_similar_phrases(phrases, history)
+            
+            # Then filter by length and exact duplicates
             unique_phrases = []
-            for phrase in phrases:
+            for phrase in filtered_phrases:
                 # Skip if too long (over 15 words)
                 if len(phrase["english"].split()) > 15:
                     continue
+                # Double-check exact match
                 if not is_phrase_used(phrase["english"]):
                     unique_phrases.append(phrase)
                 if len(unique_phrases) >= num_phrases:
@@ -207,8 +307,9 @@ IMPORTANT: Create FRESH, UNIQUE phrases that haven't been used before."""
 
 
 def get_fresh_fallback_phrases(category: str, num_phrases: int) -> list:
-    """Get fallback phrases, filtering out used ones"""
+    """Get fallback phrases, filtering out used ones with similarity check"""
 
+    # Expanded fallback phrases for ALL 25 categories
     all_fallbacks = {
         "Motivation": [
             {"english": "Believe in yourself.", "chinese": "相信自己。", "pinyin": "xiāng xìn zì jǐ."},
@@ -216,27 +317,159 @@ def get_fresh_fallback_phrases(category: str, num_phrases: int) -> list:
             {"english": "Dream big, start small.", "chinese": "胸怀大志，从小做起。", "pinyin": "xiōng huái dà zhì, cóng xiǎo zuò qǐ."},
             {"english": "Your future is created by your actions.", "chinese": "你的未来由你的行动创造。", "pinyin": "nǐ de wèi lái yóu nǐ de xíng dòng chuàng zào."},
             {"english": "Never give up on your dreams.", "chinese": "永不放弃梦想。", "pinyin": "yǒng bù fàng qì mèng xiǎng."},
+            {"english": "Small steps lead to big changes.", "chinese": "小步引领大变化。", "pinyin": "xiǎo bù yǐn lǐng dà biàn huà."},
+            {"english": "You are stronger than you think.", "chinese": "你比自己想象的更强大。", "pinyin": "nǐ bǐ zì jǐ xiǎng xiàng de gèng qiáng dà."},
         ],
         "Love": [
             {"english": "Love yourself first.", "chinese": "先爱自己。", "pinyin": "xiān ài zì jǐ."},
             {"english": "Love makes everything possible.", "chinese": "爱使一切成为可能。", "pinyin": "ài shǐ yī qiè chéng wéi kě néng."},
+            {"english": "My heart beats for you.", "chinese": "我的心为你跳动。", "pinyin": "wǒ de xīn wèi nǐ tiào dòng."},
+            {"english": "You are my everything.", "chinese": "你是我的一切。", "pinyin": "nǐ shì wǒ de yī qiè."},
+            {"english": "Together forever, hand in hand.", "chinese": "永远在一起，手牵手。", "pinyin": "yǒng yuǎn zài yī qǐ, shǒu qiān shǒu."},
         ],
         "Success": [
             {"english": "Success comes from hard work.", "chinese": "成功来自努力。", "pinyin": "chéng gōng lái zì nǔ lì."},
             {"english": "Keep going, you're getting there.", "chinese": "继续前进，你快到了。", "pinyin": "jì xù qián jìn, nǐ kuài dào le."},
+            {"english": "Winners never quit.", "chinese": "赢家永不放弃。", "pinyin": "yíng jiā yǒng bù fàng qì."},
+            {"english": "Your effort will pay off.", "chinese": "你的努力会有回报。", "pinyin": "nǐ de nǔ lì huì yǒu huí bào."},
         ],
         "Wisdom": [
             {"english": "Knowledge is power.", "chinese": "知识就是力量。", "pinyin": "zhī shí jiù shì lì liàng."},
             {"english": "Learn from yesterday, live for today.", "chinese": "借鉴昨天，活在今天。", "pinyin": "jiè jiàn zuó tiān, huó zài jīn tiān."},
+            {"english": "Think before you act.", "chinese": "三思而后行。", "pinyin": "sān sī ér hòu xíng."},
+            {"english": "Experience is the best teacher.", "chinese": "经验是最好的老师。", "pinyin": "jīng yàn shì zuì hǎo de lǎo shī."},
         ],
         "Happiness": [
             {"english": "Happiness is a choice.", "chinese": "快乐是一种选择。", "pinyin": "kuài lè shì yī zhǒng xuǎn zé."},
             {"english": "Find joy in the little things.", "chinese": "在小事中寻找快乐。", "pinyin": "zài xiǎo shì zhōng xún zhǎo kuài lè."},
+            {"english": "Smile, it makes others happy.", "chinese": "微笑，让别人也开心。", "pinyin": "wēi xiào, ràng bié rén yě kāi xīn."},
+            {"english": "Today is a gift.", "chinese": "今天是礼物。", "pinyin": "jīn tiān shì lǐ wù."},
+        ],
+        "Self Improvement": [
+            {"english": "Be better than yesterday.", "chinese": "比昨天更好。", "pinyin": "bǐ zuó tiān gèng hǎo."},
+            {"english": "Grow through what you go through.", "chinese": "在经历中成长。", "pinyin": "zài jīng lì zhōng chéng zhǎng."},
+            {"english": "Invest in yourself daily.", "chinese": "每天投资自己。", "pinyin": "měi tiān tóu zī zì jǐ."},
+        ],
+        "Gratitude": [
+            {"english": "Thank you for everything.", "chinese": "谢谢你的一切。", "pinyin": "xiè xie nǐ de yī qiè."},
+            {"english": "I appreciate your help.", "chinese": "我感激你的帮助。", "pinyin": "wǒ gǎn jī nǐ de bāng zhù."},
+            {"english": "Grateful for this moment.", "chinese": "感激这一刻。", "pinyin": "gǎn jī zhè yī kè."},
+        ],
+        "Friendship": [
+            {"english": "Friends forever, no matter what.", "chinese": "永远是朋友，无论如何。", "pinyin": "yǒng yuǎn shì péng yǒu, wú lùn rú hé."},
+            {"english": "You are my best friend.", "chinese": "你是我最好的朋友。", "pinyin": "nǐ shì wǒ zuì hǎo de péng yǒu."},
+            {"english": "True friends stick together.", "chinese": "真正的朋友在一起。", "pinyin": "zhēn zhèng de péng yǒu zài yī qǐ."},
+        ],
+        "Hope": [
+            {"english": "There is always hope.", "chinese": "总有希望。", "pinyin": "zǒng yǒu xī wàng."},
+            {"english": "Better days are coming.", "chinese": "更好的日子会来。", "pinyin": "gèng hǎo de rì zi huì lái."},
+            {"english": "Keep faith, keep going.", "chinese": "保持信念，继续前进。", "pinyin": "bǎo chí xìn niàn, jì xù qián jìn."},
+        ],
+        "Creativity": [
+            {"english": "Create something beautiful today.", "chinese": "今天创造美好的东西。", "pinyin": "jīn tiān chuàng zào měi hǎo de dōng xī."},
+            {"english": "Your imagination is unlimited.", "chinese": "你的想象力无限。", "pinyin": "nǐ de xiǎng xiàng lì wú xiàn."},
+            {"english": "Art comes from the heart.", "chinese": "艺术来自内心。", "pinyin": "yì shù lái zì nèi xīn."},
+            {"english": "Express yourself freely.", "chinese": "自由表达自己。", "pinyin": "zì yóu biǎo dá zì jǐ."},
+            {"english": "Innovation starts with curiosity.", "chinese": "创新始于好奇心。", "pinyin": "chuàng xīn shǐ yú hào qí xīn."},
+        ],
+        "Inner Peace": [
+            {"english": "Find peace within yourself.", "chinese": "在内心寻找平静。", "pinyin": "zài nèi xīn xún zhǎo píng jìng."},
+            {"english": "Breathe, relax, let go.", "chinese": "呼吸，放松，放下。", "pinyin": "hū xī, fàng sōng, fàng xià."},
+            {"english": "Calm mind, happy heart.", "chinese": "心静，心喜。", "pinyin": "xīn jìng, xīn xǐ."},
+        ],
+        "Confidence": [
+            {"english": "You are enough, just as you are.", "chinese": "你足够了，就做你自己。", "pinyin": "nǐ zú gòu le, jiù zuò nǐ zì jǐ."},
+            {"english": "Stand tall, speak up.", "chinese": "挺直腰板，大声说话。", "pinyin": "tǐng zhí yāo bǎn, dà shēng shuō huà."},
+            {"english": "Believe in your abilities.", "chinese": "相信你的能力。", "pinyin": "xiāng xìn nǐ de néng lì."},
+        ],
+        "Perseverance": [
+            {"english": "Never give up, keep pushing.", "chinese": "永不放弃，继续前进。", "pinyin": "yǒng bù fàng qì, jì xù qián jìn."},
+            {"english": "Storms make trees take deeper roots.", "chinese": "风暴使树根更深。", "pinyin": "fēng bào shǐ shù gēn gèng shēn."},
+            {"english": "Patience and persistence win.", "chinese": "耐心和坚持获胜。", "pinyin": "nài xīn hé jiān chí huò shèng."},
+        ],
+        "Inspiration": [
+            {"english": "Let your light shine bright.", "chinese": "让你的光芒闪耀。", "pinyin": "ràng nǐ de guāng máng shǎn yào."},
+            {"english": "Inspire others by your actions.", "chinese": "用行动激励他人。", "pinyin": "yòng xíng dòng jī lì tā rén."},
+            {"english": "Be the change you want to see.", "chinese": "成为你想看到的改变。", "pinyin": "chéng wéi nǐ xiǎng kàn dào de gǎi biàn."},
+        ],
+        "Positive Life": [
+            {"english": "Choose positivity every day.", "chinese": "每天选择积极。", "pinyin": "měi tiān xuǎn zé jī jí."},
+            {"english": "Good vibes only.", "chinese": "只要好氛围。", "pinyin": "zhǐ yào hǎo fēn wéi."},
+            {"english": "Life is what you make it.", "chinese": "生活由你创造。", "pinyin": "shēng huó yóu nǐ chuàng zào."},
+        ],
+        "Courage": [
+            {"english": "Be brave, take the first step.", "chinese": "勇敢，迈出第一步。", "pinyin": "yǒng gǎn, mài chū dì yī bù."},
+            {"english": "Courage is not the absence of fear.", "chinese": "勇气不是没有恐惧。", "pinyin": "yǒng qì bù shì méi yǒu kǒng jù."},
+            {"english": "Face your fears head on.", "chinese": "直面恐惧。", "pinyin": "zhí miàn kǒng jù."},
+        ],
+        "Kindness": [
+            {"english": "Be kind to everyone you meet.", "chinese": "善待你遇到的每个人。", "pinyin": "shàn dài nǐ yù dào de měi gè rén."},
+            {"english": "Kindness costs nothing, means everything.", "chinese": "善良无需代价，意义非凡。", "pinyin": "shàn liáng wú xū dài jià, yì yì fēi fán."},
+            {"english": "Spread kindness wherever you go.", "chinese": "无论去哪里都传播善良。", "pinyin": "wú lùn qù nǎ lǐ dōu chuán bō shàn liáng."},
+        ],
+        "Patience": [
+            {"english": "Good things take time.", "chinese": "好事需要时间。", "pinyin": "hǎo shì xū yào shí jiān."},
+            {"english": "Wait patiently, trust the process.", "chinese": "耐心等待，相信过程。", "pinyin": "nài xīn děng dài, xiāng xìn guò chéng."},
+            {"english": "Rome wasn't built in a day.", "chinese": "罗马不是一天建成的。", "pinyin": "luó mǎ bù shì yī tiān jiàn chéng de."},
+        ],
+        "Forgiveness": [
+            {"english": "Forgive and set yourself free.", "chinese": "原谅并释放自己。", "pinyin": "yuán liàng bìng shì fàng zì jǐ."},
+            {"english": "Let go of grudges, find peace.", "chinese": "放下怨恨，找到平静。", "pinyin": "fàng xià yuàn hèn, zhǎo dào píng jìng."},
+            {"english": "Forgiveness is a gift to yourself.", "chinese": "原谅是给自己的礼物。", "pinyin": "yuán liàng shì gěi zì jǐ de lǐ wù."},
+        ],
+        "Strength": [
+            {"english": "You are stronger than you know.", "chinese": "你比自己知道的更强大。", "pinyin": "nǐ bǐ zì jǐ zhī dào de gèng qiáng dà."},
+            {"english": "Inner strength comes from within.", "chinese": "内在力量来自内心。", "pinyin": "nèi zài lì liàng lái zì nèi xīn."},
+            {"english": "Challenges make you stronger.", "chinese": "挑战让你更强大。", "pinyin": "tiǎo zhàn ràng nǐ gèng qiáng dà."},
+        ],
+        "Joy": [
+            {"english": "Find joy in every moment.", "chinese": "在每一刻找到快乐。", "pinyin": "zài měi yī kè zhǎo dào kuài lè."},
+            {"english": "Joy is contagious, spread it.", "chinese": "快乐会传染，传播它。", "pinyin": "kuài lè huì chuán rǎn, chuán bō tā."},
+            {"english": "Dance like nobody's watching.", "chinese": "像没人看着一样跳舞。", "pinyin": "xiàng méi rén kàn zhe yī yàng tiào wǔ."},
+        ],
+        "Balance": [
+            {"english": "Find balance in your life.", "chinese": "在生活中找到平衡。", "pinyin": "zài shēng huó zhōng zhǎo dào píng héng."},
+            {"english": "Work hard, rest well.", "chinese": "努力工作，好好休息。", "pinyin": "nǔ lì gōng zuò, hǎo hǎo xiū xī."},
+            {"english": "Too much of anything is not good.", "chinese": "过犹不及。", "pinyin": "guò yóu bù jí."},
+        ],
+        "Growth": [
+            {"english": "Growth happens outside your comfort zone.", "chinese": "成长发生在舒适区外。", "pinyin": "chéng zhǎng fā shēng zài shū shì qū wài."},
+            {"english": "Embrace change, grow stronger.", "chinese": "拥抱改变，变得更强大。", "pinyin": "yōng bào gǎi biàn, biàn dé gèng qiáng dà."},
+            {"english": "Every challenge is a chance to grow.", "chinese": "每个挑战都是成长机会。", "pinyin": "měi gè tiǎo zhàn dōu shì chéng zhǎng jī huì."},
+        ],
+        "Purpose": [
+            {"english": "Find your purpose, follow it.", "chinese": "找到你的目标，追随它。", "pinyin": "zhǎo dào nǐ de mù biāo, zhuī suí tā."},
+            {"english": "Your life has meaning.", "chinese": "你的生命有意义。", "pinyin": "nǐ de shēng mìng yǒu yì yì."},
+            {"english": "Live with intention, not accident.", "chinese": "有目的地生活，不是偶然。", "pinyin": "yǒu mù dì de shēng huó, bù shì ǒu rán."},
+        ],
+        "Mindfulness": [
+            {"english": "Be present in this moment.", "chinese": "活在当下这一刻。", "pinyin": "huó zài dāng xià zhè yī kè."},
+            {"english": "Breathe deeply, stay grounded.", "chinese": "深呼吸，保持踏实。", "pinyin": "shēn hū xī, bǎo chí tà shí."},
+            {"english": "Notice the little things around you.", "chinese": "注意周围的小事。", "pinyin": "zhù yì zhōu wéi de xiǎo shì."},
         ],
     }
 
     fallbacks = all_fallbacks.get(category, all_fallbacks["Motivation"])
-    fresh_phrases = [p for p in fallbacks if not is_phrase_used(p["english"])]
+    
+    # Load history and filter with similarity check
+    history = load_phrase_history()
+    fresh_phrases = []
+    for p in fallbacks:
+        if not is_phrase_used(p["english"]) and not is_phrase_similar(p["english"], [h.get("english", "") for h in history.get("phrases", [])]):
+            fresh_phrases.append(p)
+    
+    # If still not enough, try other categories' fallbacks
+    if len(fresh_phrases) < num_phrases:
+        for cat, cat_fallbacks in all_fallbacks.items():
+            if cat != category:
+                for p in cat_fallbacks:
+                    if not is_phrase_used(p["english"]) and not is_phrase_similar(p["english"], [h.get("english", "") for h in history.get("phrases", [])]):
+                        fresh_phrases.append(p)
+                    if len(fresh_phrases) >= num_phrases:
+                        break
+            if len(fresh_phrases) >= num_phrases:
+                break
+    
     return fresh_phrases[:num_phrases]
 
 
@@ -468,7 +701,7 @@ def create_impressive_background(category_english: str):
 
 
 def generate_complete_image(phrase_data: dict, category_english: str, output_path: str):
-    """Generate image with impressive background"""
+    """Generate image with impressive background - BOLDER fonts, no text overflow"""
     try:
         from PIL import Image, ImageDraw, ImageFont
     except ImportError:
@@ -478,50 +711,50 @@ def generate_complete_image(phrase_data: dict, category_english: str, output_pat
     img = create_impressive_background(category_english)
     draw = ImageDraw.Draw(img)
 
-    # Load fonts - Optimized for mobile viewing (INCREASED sizes)
-    # English fonts (bold, professional look) - Linux/Windows fallback
+    # Load fonts - BOLDER and LARGER for better visibility
+    # English fonts (EXTRA BOLD)
     english_font_paths = [
         "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",  # Linux (GitHub Actions)
         "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",  # Alternative Linux
         "C:/Windows/Fonts/arialbd.ttf",  # Windows Arial Bold
-        "C:/Windows/Fonts/segoeui.ttf",  # Windows Segoe UI
+        "C:/Windows/Fonts/segoeusbi.ttf",  # Windows Segoe UI Semibold
     ]
-    
-    # Chinese fonts (for Chinese characters only) - Bold versions
+
+    # Chinese fonts (EXTRA BOLD for better visibility)
     chinese_font_paths = [
-        "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",  # Linux (GitHub Actions) - bold Chinese
-        "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",  # Alternative Linux bold
+        "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",  # Linux (GitHub Actions) - EXTRA BOLD
+        "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",  # Alternative Linux EXTRA BOLD
         "/usr/share/fonts/truetype/wqy/wqy-microhei.ttc",  # Alternative Linux
+        "C:/Windows/Fonts/msyhbd.ttc",  # Windows Microsoft YaHei BOLD (priority for Windows)
         "C:/Windows/Fonts/simsun.ttc",  # Windows SimSun
-        "C:/Windows/Fonts/msyh.ttc",  # Windows Microsoft YaHei
     ]
-    
+
     def load_font(font_paths, size):
-        """Load font with fallback"""
+        """Load font with fallback - tries each path until one works"""
         for font_path in font_paths:
             try:
                 return ImageFont.truetype(font_path, size)
             except (IOError, OSError):
                 continue
-        # Last resort - use default
         return ImageFont.load_default()
-    
-    # English text fonts (bold, professional)
-    font_category = load_font(english_font_paths, 60)
+
+    # English text fonts - EXTRA BOLD and BIGGER
+    font_category = load_font(english_font_paths, 65)
     font_large = load_font(english_font_paths, 85)
-    font_branding = load_font(english_font_paths, 52)
-    
-    # Chinese text fonts (supports Chinese characters, bold)
+    font_branding = load_font(english_font_paths, 55)
+
+    # Chinese text fonts - EXTRA BOLD and BIGGER (use BOLD fonts)
     font_chinese = load_font(chinese_font_paths, 85)
-    
-    # Pinyin fonts - LARGER and BOLDER for better visibility
-    font_pinyin = load_font(chinese_font_paths, 50)  # Increased from 42 to 50
+
+    # Pinyin fonts - EXTRA BOLD and LARGER (use BOLD Chinese fonts)
+    font_pinyin = load_font(chinese_font_paths, 65)  # Increased to 65 for BOLDER look
 
     english = phrase_data.get("english", "")
     chinese = phrase_data.get("chinese", "")
     pinyin = phrase_data.get("pinyin", "")
 
     def wrap_text(text, font, max_width):
+        """Wrap text to fit within max_width - ensures text never overflows"""
         words = text.split()
         lines = []
         current_line = []
@@ -539,10 +772,10 @@ def generate_complete_image(phrase_data: dict, category_english: str, output_pat
             lines.append(' '.join(current_line))
         return lines
 
-    # Category at top
+    # Category at top - with proper container
     category_text = category_english.upper()
     category_bbox = draw.textbbox((VIDEO_WIDTH // 2, 140), category_text, font=font_category, anchor="mm")
-    padding = 25
+    padding = 30  # Increased padding
     draw.rectangle(
         [(category_bbox[0] - padding, category_bbox[1] - padding),
          (category_bbox[2] + padding, category_bbox[3] + padding)],
@@ -554,83 +787,120 @@ def generate_complete_image(phrase_data: dict, category_english: str, output_pat
         fill=(255, 255, 255),
         font=font_category,
         anchor="mm",
-        stroke_width=2,
+        stroke_width=3,
         stroke_fill=(0, 0, 0)
     )
 
-    # English text
-    english_y = 470  # Adjusted for larger fonts
-    english_lines = wrap_text(english, font_large, VIDEO_WIDTH - 140)
-    total_height = len(english_lines) * 95  # Increased from 75 for larger fonts
+    # English text - with LARGER solid background container
+    english_y = 520
+    english_lines = wrap_text(english, font_large, VIDEO_WIDTH - 160)  # More margin for safety
+    line_spacing = 100  # Increased spacing
+    total_height = len(english_lines) * line_spacing
 
+    # Calculate container size BEFORE drawing
+    box_top = english_y - 70
+    box_bottom = english_y + total_height + 30
+
+    # Solid background box for English (dark blue) - LARGER container
     draw.rectangle(
-        [(60, english_y - 55), (VIDEO_WIDTH - 60, english_y + total_height + 15)],
-        fill=(20, 30, 80, 220)
+        [(80, box_top), (VIDEO_WIDTH - 80, box_bottom)],  # Wider margins
+        fill=(30, 40, 80, 240)  # More opaque
     )
 
     for i, line in enumerate(english_lines):
-        y_pos = english_y + (i * 95)  # Increased spacing
+        y_pos = english_y + (i * line_spacing)
         draw.text(
             (VIDEO_WIDTH // 2, y_pos),
             line,
             fill=(255, 255, 255),
             font=font_large,
             anchor="mm",
-            stroke_width=2,
+            stroke_width=5,  # THICKER stroke for BOLDER look
             stroke_fill=(0, 0, 0)
         )
 
-    # Chinese text
-    chinese_y = english_y + total_height + 110  # Increased from 100
-    chinese_lines = wrap_text(chinese, font_chinese, VIDEO_WIDTH - 140)
-    total_height = len(chinese_lines) * 95  # Increased from 75
+    # Chinese text - with LARGER container and BOLDER font
+    chinese_y = english_y + total_height + 130
+    chinese_lines = wrap_text(chinese, font_chinese, VIDEO_WIDTH - 140)  # Safe width
+    total_height = len(chinese_lines) * line_spacing
 
+    # Calculate container size BEFORE drawing
+    box_top = chinese_y - 70
+    box_bottom = chinese_y + total_height + 30
+
+    # Solid background box for Chinese (warm brown/red) - LARGER container
     draw.rectangle(
-        [(60, chinese_y - 55), (VIDEO_WIDTH - 60, chinese_y + total_height + 15)],
-        fill=(80, 30, 30, 220)
+        [(70, box_top), (VIDEO_WIDTH - 70, box_bottom)],  # Safe margins
+        fill=(85, 45, 45, 240)  # More opaque
     )
 
     for i, line in enumerate(chinese_lines):
-        y_pos = chinese_y + (i * 95)  # Increased spacing
+        y_pos = chinese_y + (i * line_spacing)
         draw.text(
             (VIDEO_WIDTH // 2, y_pos),
             line,
-            fill=(255, 255, 0),
+            fill=(255, 255, 50),  # Brighter yellow
             font=font_chinese,
             anchor="mm",
-            stroke_width=2,
+            stroke_width=6,  # EVEN THICKER stroke for CHINESE (max boldness)
             stroke_fill=(0, 0, 0)
         )
 
-    # Pinyin with FILLED BOX - BOLDER text for better visibility
-    pinyin_y = chinese_y + total_height + 90  # Increased from 80
+    # Pinyin - EXTRA BOLD and LARGER with dynamic container
+    # Add PROPER spacing between Chinese box and Pinyin box (no overlap)
+    pinyin_y = chinese_y + total_height + 150  # Increased from 110 to 150 for proper gap
     pinyin_text = f"[{pinyin}]"
-    pinyin_lines = wrap_text(pinyin_text, font_pinyin, VIDEO_WIDTH - 160)
+    
+    # Wrap pinyin text to fit
+    max_pron_width = 750  # Max width before wrapping
+    pinyin_lines = wrap_text(pinyin_text, font_pinyin, max_pron_width)
+    
+    # Calculate actual text width for container sizing
+    max_pron_text_width = 0
+    for line in pinyin_lines:
+        bbox = draw.textbbox((0, 0), line, font=font_pinyin)
+        text_width = bbox[2] - bbox[0]
+        max_pron_text_width = max(max_pron_text_width, text_width)
+    
+    # Dynamic container sizing - expands based on text, but stays within bounds
+    pron_padding_x = 55
+    pron_padding_y = 30
+    min_pron_width = 280
+    pron_container_width = max(min_pron_width, max_pron_text_width + (pron_padding_x * 2))
+    pron_container_width = min(pron_container_width, VIDEO_WIDTH - 120)  # Max constraint
+    
+    # Calculate container dimensions
+    pron_line_height = 65  # Increased spacing
+    total_pron_height = len(pinyin_lines) * pron_line_height
+    box_top = pinyin_y - total_pron_height // 2 - pron_padding_y + 10
+    box_bottom = pinyin_y + (len(pinyin_lines) - 1) * pron_line_height + total_pron_height // 2 + pron_padding_y - 10
+    box_left = (VIDEO_WIDTH - pron_container_width) // 2
+    box_right = (VIDEO_WIDTH + pron_container_width) // 2
 
-    if pinyin_lines:
-        pinyin_total_height = len(pinyin_lines) * 52  # Increased from 42 for larger font
-        draw.rectangle(
-            [(70, pinyin_y - 20), (VIDEO_WIDTH - 70, pinyin_y + pinyin_total_height + 10)],
-            fill=(40, 40, 40, 230)
+    # Draw DARK background box for pinyin (more visible, more opaque)
+    draw.rectangle(
+        [(box_left, box_top), (box_right, box_bottom)],
+        fill=(40, 40, 60, 230)  # Darker, more opaque
+    )
+
+    # Draw pinyin text - EXTRA BOLD
+    for i, pinyin_line in enumerate(pinyin_lines):
+        y_pos = pinyin_y + (i * pron_line_height)
+        draw.text(
+            (VIDEO_WIDTH // 2, y_pos),
+            pinyin_line,
+            fill=(255, 255, 255),  # Brightest white
+            font=font_pinyin,
+            anchor="mm",
+            stroke_width=4,  # THICKER stroke for PINYIN (max boldness)
+            stroke_fill=(0, 0, 0)
         )
 
-        for i, pinyin_line in enumerate(pinyin_lines):
-            y_pos = pinyin_y + (i * 52)  # Increased spacing to match font size
-            draw.text(
-                (VIDEO_WIDTH // 2, y_pos),
-                pinyin_line,
-                fill=(255, 255, 255),  # Brighter white for better contrast
-                font=font_pinyin,
-                anchor="mm",
-                stroke_width=2,  # Increased from 1 to 2 for bolder text
-                stroke_fill=(0, 0, 0, 200)
-            )
-
-    # Branding
-    branding_y = VIDEO_HEIGHT - 100
+    # Branding at bottom - BOLDER
+    branding_y = VIDEO_HEIGHT - 90
     draw.rectangle(
-        [(0, branding_y - 30), (VIDEO_WIDTH, branding_y + 50)],
-        fill=(0, 0, 0, 180)
+        [(0, branding_y - 40), (VIDEO_WIDTH, branding_y + 60)],
+        fill=(0, 0, 0, 200)  # More opaque
     )
     draw.text(
         (VIDEO_WIDTH // 2, branding_y),
@@ -638,7 +908,7 @@ def generate_complete_image(phrase_data: dict, category_english: str, output_pat
         fill=(255, 255, 255),
         font=font_branding,
         anchor="mm",
-        stroke_width=2,
+        stroke_width=3,  # THICKER stroke
         stroke_fill=(0, 0, 0)
     )
 
