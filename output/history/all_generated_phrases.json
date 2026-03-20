@@ -1259,7 +1259,37 @@
       "chinese": "沉默低语，真相。",
       "category": "Inner Peace",
       "generated_at": "2026-03-20T05:21:12.313023"
+    },
+    {
+      "english": "Speak slow, please.",
+      "chinese": "说慢点, 谢谢。",
+      "category": "Growth",
+      "generated_at": "2026-03-20T15:31:07.732171"
+    },
+    {
+      "english": "Too fast, I miss.",
+      "chinese": "太快了, 我漏了。",
+      "category": "Growth",
+      "generated_at": "2026-03-20T15:31:07.732180"
+    },
+    {
+      "english": "One more time, okay?",
+      "chinese": "再说一次, 好吗？",
+      "category": "Growth",
+      "generated_at": "2026-03-20T15:31:07.732181"
+    },
+    {
+      "english": "Not that word, try.",
+      "chinese": "不是那个词, 试试。",
+      "category": "Growth",
+      "generated_at": "2026-03-20T15:31:07.732183"
+    },
+    {
+      "english": "Almost there, good!",
+      "chinese": "快到了, 不错!",
+      "category": "Growth",
+      "generated_at": "2026-03-20T15:31:07.732184"
     }
   ],
-  "last_updated": "2026-03-20T05:21:12.313024"
+  "last_updated": "2026-03-20T15:31:07.732185"
 }
