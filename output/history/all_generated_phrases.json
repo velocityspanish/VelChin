@@ -1319,7 +1319,37 @@
       "chinese": "友谊，是礼物。",
       "category": "Friendship",
       "generated_at": "2026-03-20T17:56:41.363152"
+    },
+    {
+      "english": "Sorry, my love, for the misunderstanding.",
+      "chinese": "抱歉，我的爱，我们误会了。",
+      "category": "Forgiveness",
+      "generated_at": "2026-03-20T20:01:05.233372"
+    },
+    {
+      "english": "Can you forgive me, sweetheart?",
+      "chinese": "你能原谅我吗，亲爱的？",
+      "category": "Forgiveness",
+      "generated_at": "2026-03-20T20:01:05.233382"
+    },
+    {
+      "english": "My bad, hope you can let it go.",
+      "chinese": "我的错，希望你能放下。",
+      "category": "Forgiveness",
+      "generated_at": "2026-03-20T20:01:05.233384"
+    },
+    {
+      "english": "Please don't be mad, okay?",
+      "chinese": "别生气了，好吗？",
+      "category": "Forgiveness",
+      "generated_at": "2026-03-20T20:01:05.233385"
+    },
+    {
+      "english": "I messed up, can we start over?",
+      "chinese": "我搞砸了，我们能重新开始吗？",
+      "category": "Forgiveness",
+      "generated_at": "2026-03-20T20:01:05.233386"
     }
   ],
-  "last_updated": "2026-03-20T17:56:41.363154"
+  "last_updated": "2026-03-20T20:01:05.233387"
 }
