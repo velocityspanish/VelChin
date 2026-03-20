@@ -1289,7 +1289,37 @@
       "chinese": "快到了, 不错!",
       "category": "Growth",
       "generated_at": "2026-03-20T15:31:07.732184"
+    },
+    {
+      "english": "A good friend, is a treasure.",
+      "chinese": "好朋友，是珍宝。",
+      "category": "Friendship",
+      "generated_at": "2026-03-20T17:56:41.363140"
+    },
+    {
+      "english": "Together, we are stronger.",
+      "chinese": "在一起，我们更强。",
+      "category": "Friendship",
+      "generated_at": "2026-03-20T17:56:41.363149"
+    },
+    {
+      "english": "True friends, stay close.",
+      "chinese": "真朋友，常相伴。",
+      "category": "Friendship",
+      "generated_at": "2026-03-20T17:56:41.363150"
+    },
+    {
+      "english": "We grow, with good friends.",
+      "chinese": "和好朋友，一起成长。",
+      "category": "Friendship",
+      "generated_at": "2026-03-20T17:56:41.363151"
+    },
+    {
+      "english": "Friendship, is a gift.",
+      "chinese": "友谊，是礼物。",
+      "category": "Friendship",
+      "generated_at": "2026-03-20T17:56:41.363152"
     }
   ],
-  "last_updated": "2026-03-20T15:31:07.732185"
+  "last_updated": "2026-03-20T17:56:41.363154"
 }
