@@ -1649,7 +1649,37 @@
       "chinese": "每天，都有闪光的机会。",
       "category": "Positive Life",
       "generated_at": "2026-03-22T19:46:17.376407"
+    },
+    {
+      "english": "Thank you, that's very kind.",
+      "chinese": "谢谢你，你真好。",
+      "category": "Gratitude",
+      "generated_at": "2026-03-22T22:58:17.394552"
+    },
+    {
+      "english": "I appreciate your help, truly.",
+      "chinese": "很感激，你的帮助。",
+      "category": "Gratitude",
+      "generated_at": "2026-03-22T22:58:17.394562"
+    },
+    {
+      "english": "So grateful, for your advice.",
+      "chinese": "非常感谢，你的建议。",
+      "category": "Gratitude",
+      "generated_at": "2026-03-22T22:58:17.394563"
+    },
+    {
+      "english": "This is wonderful, thank you.",
+      "chinese": "太好了，谢谢。",
+      "category": "Gratitude",
+      "generated_at": "2026-03-22T22:58:17.394564"
+    },
+    {
+      "english": "My thanks, for this gift.",
+      "chinese": "我的谢意，为了这个礼物。",
+      "category": "Gratitude",
+      "generated_at": "2026-03-22T22:58:17.394565"
     }
   ],
-  "last_updated": "2026-03-22T19:46:17.376409"
+  "last_updated": "2026-03-22T22:58:17.394567"
 }
