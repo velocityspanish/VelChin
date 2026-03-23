@@ -1799,7 +1799,37 @@
       "chinese": "你真是个摇滚明星！",
       "category": "Gratitude",
       "generated_at": "2026-03-23T20:58:22.776311"
+    },
+    {
+      "english": "Your help, was a true gift.",
+      "chinese": "你的帮助，是份真礼物。",
+      "category": "Gratitude",
+      "generated_at": "2026-03-23T23:06:14.081091"
+    },
+    {
+      "english": "I appreciate, your patience.",
+      "chinese": "我感激，你的耐心。",
+      "category": "Gratitude",
+      "generated_at": "2026-03-23T23:06:14.081100"
+    },
+    {
+      "english": "This food, is delicious, thank you.",
+      "chinese": "这食物，很好吃，谢谢。",
+      "category": "Gratitude",
+      "generated_at": "2026-03-23T23:06:14.081101"
+    },
+    {
+      "english": "Your advice, really helped.",
+      "chinese": "你的建议，真有用。",
+      "category": "Gratitude",
+      "generated_at": "2026-03-23T23:06:14.081102"
+    },
+    {
+      "english": "Thank you, for being here.",
+      "chinese": "谢谢你，在这里。",
+      "category": "Gratitude",
+      "generated_at": "2026-03-23T23:06:14.081103"
     }
   ],
-  "last_updated": "2026-03-23T20:58:22.776313"
+  "last_updated": "2026-03-23T23:06:14.081105"
 }
