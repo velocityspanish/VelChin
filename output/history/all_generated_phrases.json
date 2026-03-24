@@ -1829,7 +1829,37 @@
       "chinese": "谢谢你，在这里。",
       "category": "Gratitude",
       "generated_at": "2026-03-23T23:06:14.081103"
+    },
+    {
+      "english": "Listen more, speak less.",
+      "chinese": "多听，少说。",
+      "category": "Success",
+      "generated_at": "2026-03-24T05:41:44.334392"
+    },
+    {
+      "english": "Don't be afraid, to make mistakes.",
+      "chinese": "别怕，犯错误。",
+      "category": "Success",
+      "generated_at": "2026-03-24T05:41:44.334402"
+    },
+    {
+      "english": "Every day, a little progress.",
+      "chinese": "每天，进步一点。",
+      "category": "Success",
+      "generated_at": "2026-03-24T05:41:44.334403"
+    },
+    {
+      "english": "Speak clearly, be understood.",
+      "chinese": "说清楚，被理解。",
+      "category": "Success",
+      "generated_at": "2026-03-24T05:41:44.334404"
+    },
+    {
+      "english": "Review often, remember well.",
+      "chinese": "常复习，记得牢。",
+      "category": "Success",
+      "generated_at": "2026-03-24T05:41:44.334406"
     }
   ],
-  "last_updated": "2026-03-23T23:06:14.081105"
+  "last_updated": "2026-03-24T05:41:44.334407"
 }
