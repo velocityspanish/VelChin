@@ -2009,7 +2009,37 @@
       "chinese": "我们是，很棒的搭档，对吗？",
       "category": "Strength",
       "generated_at": "2026-03-25T05:43:47.444726"
+    },
+    {
+      "english": "Oops, my bad!  Let's hit reset.",
+      "chinese": "哎呀，我的错！ 重新开始吧。",
+      "category": "Forgiveness",
+      "generated_at": "2026-03-25T16:47:40.250505"
+    },
+    {
+      "english": "My brain fart, please forgive me!",
+      "chinese": "我脑子短路了，请原谅！",
+      "category": "Forgiveness",
+      "generated_at": "2026-03-25T16:47:40.250513"
+    },
+    {
+      "english": "Totally spaced out, my apologies!",
+      "chinese": "我完全走神了，抱歉！",
+      "category": "Forgiveness",
+      "generated_at": "2026-03-25T16:47:40.250515"
+    },
+    {
+      "english": "Did I mess up?  Sorry, dude!",
+      "chinese": "我搞砸了吗？ 对不起，哥们！",
+      "category": "Forgiveness",
+      "generated_at": "2026-03-25T16:47:40.250516"
+    },
+    {
+      "english": "My bad, let's smooth it over.",
+      "chinese": "我的不好，我们把事情抹平。",
+      "category": "Forgiveness",
+      "generated_at": "2026-03-25T16:47:40.250517"
     }
   ],
-  "last_updated": "2026-03-25T05:43:47.444728"
+  "last_updated": "2026-03-25T16:47:40.250518"
 }
