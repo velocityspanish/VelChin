@@ -822,19 +822,36 @@ def generate_complete_image(phrase_data: dict, category_english: str, output_pat
             stroke_fill=(0, 0, 0)
         )
 
-    # Chinese text - with BOLDER font and wider container
+    # Chinese text - with BOLDER font and DYNAMIC container that expands with text
     chinese_y = english_y + total_height + 130
-    # Use safer max_width to prevent overflow on all systems (especially Linux)
-    chinese_lines = wrap_text(chinese, font_chinese, VIDEO_WIDTH - 180)  # Extra safe margin
+    # Wrap text but also calculate actual width for dynamic container
+    max_chinese_width = VIDEO_WIDTH - 200  # Safe margin
+    chinese_lines = wrap_text(chinese, font_chinese, max_chinese_width)
+    
+    # Calculate actual text width for dynamic container sizing
+    max_chinese_text_width = 0
+    for line in chinese_lines:
+        bbox = draw.textbbox((0, 0), line, font=font_chinese)
+        text_width = bbox[2] - bbox[0]
+        max_chinese_text_width = max(max_chinese_text_width, text_width)
+    
+    # Dynamic container sizing - expands based on text, but stays within bounds
+    chinese_padding_x = 60
+    chinese_min_width = 300
+    chinese_container_width = max(chinese_min_width, max_chinese_text_width + (chinese_padding_x * 2))
+    chinese_container_width = min(chinese_container_width, VIDEO_WIDTH - 100)  # Max constraint
+    
+    # Calculate container position (centered)
+    chinese_box_left = (VIDEO_WIDTH - chinese_container_width) // 2
+    chinese_box_right = (VIDEO_WIDTH + chinese_container_width) // 2
+    
     total_height = len(chinese_lines) * line_spacing
-
-    # Calculate container size BEFORE drawing
     box_top = chinese_y - 70
     box_bottom = chinese_y + total_height + 30
 
-    # Solid background box for Chinese (warm brown/red) - wider container
+    # Solid background box for Chinese (warm brown/red) - DYNAMIC width based on text
     draw.rectangle(
-        [(90, box_top), (VIDEO_WIDTH - 90, box_bottom)],  # 90px margins (was 70px)
+        [(chinese_box_left, box_top), (chinese_box_right, box_bottom)],
         fill=(85, 45, 45, 240)
     )
 
