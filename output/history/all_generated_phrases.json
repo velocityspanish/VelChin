@@ -2489,7 +2489,37 @@
       "chinese": "一点点，就学会。",
       "category": "Success",
       "generated_at": "2026-03-28T05:38:33.268842"
+    },
+    {
+      "english": "Listen closely, hear the world.",
+      "chinese": "仔细听，听世界。",
+      "category": "Mindfulness",
+      "generated_at": "2026-03-28T14:54:57.516338"
+    },
+    {
+      "english": "See the details, find the joy.",
+      "chinese": "看细节，找快乐。",
+      "category": "Mindfulness",
+      "generated_at": "2026-03-28T14:54:57.516347"
+    },
+    {
+      "english": "Feel the moment, be present.",
+      "chinese": "感受当下，活在此。",
+      "category": "Mindfulness",
+      "generated_at": "2026-03-28T14:54:57.516349"
+    },
+    {
+      "english": "Taste your food, savor it.",
+      "chinese": "品尝食物，细细尝。",
+      "category": "Mindfulness",
+      "generated_at": "2026-03-28T14:54:57.516350"
+    },
+    {
+      "english": "Touch gently, connect deeply.",
+      "chinese": "轻轻碰，深深连。",
+      "category": "Mindfulness",
+      "generated_at": "2026-03-28T14:54:57.516351"
     }
   ],
-  "last_updated": "2026-03-28T05:38:33.268844"
+  "last_updated": "2026-03-28T14:54:57.516353"
 }
