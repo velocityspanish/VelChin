@@ -2459,7 +2459,37 @@
       "chinese": "小步子, 大梦想成真。",
       "category": "Hope",
       "generated_at": "2026-03-27T23:48:09.915087"
+    },
+    {
+      "english": "Practice makes, perfect, easy.",
+      "chinese": "多练，真棒，很简单。",
+      "category": "Success",
+      "generated_at": "2026-03-28T05:38:33.268829"
+    },
+    {
+      "english": "Mistakes are good, learn them.",
+      "chinese": "错不怕，学到了。",
+      "category": "Success",
+      "generated_at": "2026-03-28T05:38:33.268838"
+    },
+    {
+      "english": "This sentence, you know now.",
+      "chinese": "这句，你懂了。",
+      "category": "Success",
+      "generated_at": "2026-03-28T05:38:33.268840"
+    },
+    {
+      "english": "Think in Chinese, speak it.",
+      "chinese": "中文想，中文说。",
+      "category": "Success",
+      "generated_at": "2026-03-28T05:38:33.268841"
+    },
+    {
+      "english": "Little by little, get it.",
+      "chinese": "一点点，就学会。",
+      "category": "Success",
+      "generated_at": "2026-03-28T05:38:33.268842"
     }
   ],
-  "last_updated": "2026-03-27T23:48:09.915089"
+  "last_updated": "2026-03-28T05:38:33.268844"
 }
