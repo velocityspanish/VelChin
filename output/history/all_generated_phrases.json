@@ -2669,7 +2669,37 @@
       "chinese": "明天的成功, 从今天开始.",
       "category": "Hope",
       "generated_at": "2026-03-29T14:56:43.706106"
+    },
+    {
+      "english": "Sorry, my mistake. I'll fix it.",
+      "chinese": "抱歉，我错了。我来改。",
+      "category": "Forgiveness",
+      "generated_at": "2026-03-29T17:06:23.574326"
+    },
+    {
+      "english": "No problem, really. Don't worry.",
+      "chinese": "没关系，真的。别担心。",
+      "category": "Forgiveness",
+      "generated_at": "2026-03-29T17:06:23.574335"
+    },
+    {
+      "english": "I understand now, thanks.",
+      "chinese": "我明白了，谢谢。",
+      "category": "Forgiveness",
+      "generated_at": "2026-03-29T17:06:23.574337"
+    },
+    {
+      "english": "It's okay, we all forget.",
+      "chinese": "没事的，都会忘。",
+      "category": "Forgiveness",
+      "generated_at": "2026-03-29T17:06:23.574338"
+    },
+    {
+      "english": "My apologies. I should have known.",
+      "chinese": "对不起，我该知道。",
+      "category": "Forgiveness",
+      "generated_at": "2026-03-29T17:06:23.574339"
     }
   ],
-  "last_updated": "2026-03-29T14:56:43.706108"
+  "last_updated": "2026-03-29T17:06:23.574341"
 }
