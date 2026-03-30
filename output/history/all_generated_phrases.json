@@ -2819,7 +2819,37 @@
       "chinese": "用力推，再休息。",
       "category": "Balance",
       "generated_at": "2026-03-30T16:17:05.967312"
+    },
+    {
+      "english": "Sparks fly, ideas bloom.",
+      "chinese": "灵感闪耀，创意绽放。",
+      "category": "Creativity",
+      "generated_at": "2026-03-30T19:38:44.084898"
+    },
+    {
+      "english": "Think outside, the usual box.",
+      "chinese": "跳出，寻常的框架。",
+      "category": "Creativity",
+      "generated_at": "2026-03-30T19:38:44.084907"
+    },
+    {
+      "english": "Curiosity, unlocks doors.",
+      "chinese": "好奇心，打开门。",
+      "category": "Creativity",
+      "generated_at": "2026-03-30T19:38:44.084908"
+    },
+    {
+      "english": "Dare to be, a little weird.",
+      "chinese": "敢于，有点不一样。",
+      "category": "Creativity",
+      "generated_at": "2026-03-30T19:38:44.084909"
+    },
+    {
+      "english": "Imagine more, achieve more.",
+      "chinese": "多想象，多实现。",
+      "category": "Creativity",
+      "generated_at": "2026-03-30T19:38:44.084910"
     }
   ],
-  "last_updated": "2026-03-30T16:17:05.967313"
+  "last_updated": "2026-03-30T19:38:44.084912"
 }
