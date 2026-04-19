@@ -3239,7 +3239,37 @@
       "chinese": "你的进步，是真的。继续建。",
       "category": "Perseverance",
       "generated_at": "2026-04-19T19:33:41.220750"
+    },
+    {
+      "english": "Mistake made? No worries. Try again.",
+      "chinese": "犯错了？ 没关系。 再试试。",
+      "category": "Forgiveness",
+      "generated_at": "2026-04-19T22:46:38.849042"
+    },
+    {
+      "english": "Oops, wrong word. Let's fix it.",
+      "chinese": "哎呀，说错了。 咱们改。",
+      "category": "Forgiveness",
+      "generated_at": "2026-04-19T22:46:38.849052"
+    },
+    {
+      "english": "Don't stress, it happens. We learn.",
+      "chinese": "别紧张，这正常。 我们学。",
+      "category": "Forgiveness",
+      "generated_at": "2026-04-19T22:46:38.849054"
+    },
+    {
+      "english": "Pronunciation off? Listen, repeat, easy.",
+      "chinese": "发音不对？ 听，再读，简单。",
+      "category": "Forgiveness",
+      "generated_at": "2026-04-19T22:46:38.849055"
+    },
+    {
+      "english": "Confused by this? Let's break it down.",
+      "chinese": "这块不懂？ 我们拆开说。",
+      "category": "Forgiveness",
+      "generated_at": "2026-04-19T22:46:38.849056"
     }
   ],
-  "last_updated": "2026-04-19T19:33:41.220752"
+  "last_updated": "2026-04-19T22:46:38.849058"
 }
