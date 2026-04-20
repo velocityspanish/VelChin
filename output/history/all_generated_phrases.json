@@ -3329,7 +3329,37 @@
       "chinese": "这个句子, 很难。我们停一下。",
       "category": "Perseverance",
       "generated_at": "2026-04-20T14:28:21.997073"
+    },
+    {
+      "english": "Your courage, shines bright. Keep going.",
+      "chinese": "你的勇气，闪闪发光。继续。",
+      "category": "Courage",
+      "generated_at": "2026-04-20T17:00:53.298800"
+    },
+    {
+      "english": "That leap of faith, wow. I like it.",
+      "chinese": "那份勇气，哇。我喜欢。",
+      "category": "Courage",
+      "generated_at": "2026-04-20T17:00:53.298812"
+    },
+    {
+      "english": "Facing fears? You're so brave. Really.",
+      "chinese": "面对恐惧？你真勇敢。真的。",
+      "category": "Courage",
+      "generated_at": "2026-04-20T17:00:53.298813"
+    },
+    {
+      "english": "Don't hold back, I believe you can.",
+      "chinese": "别退缩，我相信你。",
+      "category": "Courage",
+      "generated_at": "2026-04-20T17:00:53.298814"
+    },
+    {
+      "english": "That risk you took, impressive. So much.",
+      "chinese": "你冒的险，真厉害。好多。",
+      "category": "Courage",
+      "generated_at": "2026-04-20T17:00:53.298815"
     }
   ],
-  "last_updated": "2026-04-20T14:28:21.997076"
+  "last_updated": "2026-04-20T17:00:53.298817"
 }
