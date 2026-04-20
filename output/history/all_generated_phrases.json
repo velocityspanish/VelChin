@@ -3299,7 +3299,37 @@
       "chinese": "很高兴，我们认识，真的。",
       "category": "Gratitude",
       "generated_at": "2026-04-20T04:23:38.951039"
+    },
+    {
+      "english": "Slow down, don't rush. Listen.",
+      "chinese": "别急, 慢慢来。听。",
+      "category": "Perseverance",
+      "generated_at": "2026-04-20T14:28:21.997058"
+    },
+    {
+      "english": "One character, one step. We go.",
+      "chinese": "一个字, 一步。我们走。",
+      "category": "Perseverance",
+      "generated_at": "2026-04-20T14:28:21.997069"
+    },
+    {
+      "english": "Said it wrong? Big deal. Try again.",
+      "chinese": "说错了? 没关系。再试试。",
+      "category": "Perseverance",
+      "generated_at": "2026-04-20T14:28:21.997071"
+    },
+    {
+      "english": "Hear the sound? Try to match.",
+      "chinese": "听到那个音? 试着模仿。",
+      "category": "Perseverance",
+      "generated_at": "2026-04-20T14:28:21.997072"
+    },
+    {
+      "english": "This sentence, is tough. Let's pause.",
+      "chinese": "这个句子, 很难。我们停一下。",
+      "category": "Perseverance",
+      "generated_at": "2026-04-20T14:28:21.997073"
     }
   ],
-  "last_updated": "2026-04-20T04:23:38.951040"
+  "last_updated": "2026-04-20T14:28:21.997076"
 }
