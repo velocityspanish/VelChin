@@ -3359,7 +3359,37 @@
       "chinese": "你冒的险，真厉害。好多。",
       "category": "Courage",
       "generated_at": "2026-04-20T17:00:53.298815"
+    },
+    {
+      "english": "You're the best, study buddy, ever.",
+      "chinese": "你是我最好的学习伙伴。",
+      "category": "Friendship",
+      "generated_at": "2026-04-20T19:52:57.797072"
+    },
+    {
+      "english": "Let's master this, together, okay?",
+      "chinese": "我们一起，攻克这个，好吗？",
+      "category": "Friendship",
+      "generated_at": "2026-04-20T19:52:57.797084"
+    },
+    {
+      "english": "Your progress, is amazing, wow.",
+      "chinese": "你的进步，令人惊叹。",
+      "category": "Friendship",
+      "generated_at": "2026-04-20T19:52:57.797085"
+    },
+    {
+      "english": "This word, sounds so good, from you.",
+      "chinese": "这个词，从你嘴里说出来，真好听。",
+      "category": "Friendship",
+      "generated_at": "2026-04-20T19:52:57.797086"
+    },
+    {
+      "english": "Can we practice, more, later?",
+      "chinese": "我们可以，晚点，再多练练吗？",
+      "category": "Friendship",
+      "generated_at": "2026-04-20T19:52:57.797087"
     }
   ],
-  "last_updated": "2026-04-20T17:00:53.298817"
+  "last_updated": "2026-04-20T19:52:57.797089"
 }
