@@ -3269,7 +3269,37 @@
       "chinese": "这块不懂？ 我们拆开说。",
       "category": "Forgiveness",
       "generated_at": "2026-04-19T22:46:38.849056"
+    },
+    {
+      "english": "You're my favorite, hello.",
+      "chinese": "你是我最喜欢的，你好。",
+      "category": "Gratitude",
+      "generated_at": "2026-04-20T04:23:38.951024"
+    },
+    {
+      "english": "Thanks for the smile, you.",
+      "chinese": "谢谢你的微笑，你。",
+      "category": "Gratitude",
+      "generated_at": "2026-04-20T04:23:38.951035"
+    },
+    {
+      "english": "This feeling, is nice, thanks.",
+      "chinese": "这种感觉，很好，谢谢。",
+      "category": "Gratitude",
+      "generated_at": "2026-04-20T04:23:38.951036"
+    },
+    {
+      "english": "Your words, really help, a lot.",
+      "chinese": "你的话，真的帮了，很多。",
+      "category": "Gratitude",
+      "generated_at": "2026-04-20T04:23:38.951038"
+    },
+    {
+      "english": "So glad, we met, truly.",
+      "chinese": "很高兴，我们认识，真的。",
+      "category": "Gratitude",
+      "generated_at": "2026-04-20T04:23:38.951039"
     }
   ],
-  "last_updated": "2026-04-19T22:46:38.849058"
+  "last_updated": "2026-04-20T04:23:38.951040"
 }
