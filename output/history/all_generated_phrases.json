@@ -3569,7 +3569,37 @@
       "chinese": "我们是搭档，真的。嗯。",
       "category": "Friendship",
       "generated_at": "2026-04-21T22:49:49.547688"
+    },
+    {
+      "english": "Your Chinese, is so cute. Wow.",
+      "chinese": "你的中文，真可爱。哇。",
+      "category": "Success",
+      "generated_at": "2026-04-22T04:11:21.044835"
+    },
+    {
+      "english": "Let's chat, more often. Yeah?",
+      "chinese": "我们多聊聊，好不好？嗯？",
+      "category": "Success",
+      "generated_at": "2026-04-22T04:11:21.044842"
+    },
+    {
+      "english": "Learning Chinese, with you? Best idea.",
+      "chinese": "跟你一起学中文？绝妙主意。",
+      "category": "Success",
+      "generated_at": "2026-04-22T04:11:21.044844"
+    },
+    {
+      "english": "You speak so well, I’m impressed.",
+      "chinese": "你说得真好，我佩服了。",
+      "category": "Success",
+      "generated_at": "2026-04-22T04:11:21.044845"
+    },
+    {
+      "english": "Can I hear you, say that again?",
+      "chinese": "能让我再听一遍吗？",
+      "category": "Success",
+      "generated_at": "2026-04-22T04:11:21.044845"
     }
   ],
-  "last_updated": "2026-04-21T22:49:49.547689"
+  "last_updated": "2026-04-22T04:11:21.044847"
 }
