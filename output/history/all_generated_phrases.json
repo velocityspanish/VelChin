@@ -3629,7 +3629,37 @@
       "chinese": "在小事里，找到奇迹。",
       "category": "Happiness",
       "generated_at": "2026-04-22T14:29:47.737912"
+    },
+    {
+      "english": "Slow down, listen more.",
+      "chinese": "慢一点, 多听。",
+      "category": "Mindfulness",
+      "generated_at": "2026-04-22T16:55:10.187137"
+    },
+    {
+      "english": "Breathe deep, say it clearly.",
+      "chinese": "深呼吸, 说清楚。",
+      "category": "Mindfulness",
+      "generated_at": "2026-04-22T16:55:10.187149"
+    },
+    {
+      "english": "Don't rush, just flow.",
+      "chinese": "别着急, 就这样。",
+      "category": "Mindfulness",
+      "generated_at": "2026-04-22T16:55:10.187150"
+    },
+    {
+      "english": "Focus now, learn well.",
+      "chinese": "现在专注, 学得好。",
+      "category": "Mindfulness",
+      "generated_at": "2026-04-22T16:55:10.187151"
+    },
+    {
+      "english": "It's okay, to not know.",
+      "chinese": "不知道, 没关系。",
+      "category": "Mindfulness",
+      "generated_at": "2026-04-22T16:55:10.187152"
     }
   ],
-  "last_updated": "2026-04-22T14:29:47.737913"
+  "last_updated": "2026-04-22T16:55:10.187154"
 }
