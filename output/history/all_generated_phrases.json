@@ -3719,7 +3719,37 @@
       "chinese": "简单的话，力量大。",
       "category": "Wisdom",
       "generated_at": "2026-04-22T22:56:12.616841"
+    },
+    {
+      "english": "Tomorrow's a new day, be brave!",
+      "chinese": "明天新一天, 勇敢!",
+      "category": "Hope",
+      "generated_at": "2026-04-23T04:15:49.077224"
+    },
+    {
+      "english": "Hang in there, buddy!",
+      "chinese": "撑住啊, 朋友!",
+      "category": "Hope",
+      "generated_at": "2026-04-23T04:15:49.077233"
+    },
+    {
+      "english": "You got this, no doubt!",
+      "chinese": "你可以的, 没问题!",
+      "category": "Hope",
+      "generated_at": "2026-04-23T04:15:49.077235"
+    },
+    {
+      "english": "Even a tiny step, counts!",
+      "chinese": "小步也算, 进步!",
+      "category": "Hope",
+      "generated_at": "2026-04-23T04:15:49.077236"
+    },
+    {
+      "english": "Believe in yourself, always!",
+      "chinese": "相信自己, 永远!",
+      "category": "Hope",
+      "generated_at": "2026-04-23T04:15:49.077237"
     }
   ],
-  "last_updated": "2026-04-22T22:56:12.616843"
+  "last_updated": "2026-04-23T04:15:49.077238"
 }
