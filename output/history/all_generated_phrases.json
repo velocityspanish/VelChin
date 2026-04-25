@@ -4049,7 +4049,37 @@
       "chinese": "我最美的风景, 是你。",
       "category": "Love",
       "generated_at": "2026-04-25T03:54:46.203160"
+    },
+    {
+      "english": "Keep going, don't stop now.",
+      "chinese": "继续, 别停下。",
+      "category": "Perseverance",
+      "generated_at": "2026-04-25T16:36:10.652123"
+    },
+    {
+      "english": "Practice makes perfect. True.",
+      "chinese": "熟能生巧。没错。",
+      "category": "Perseverance",
+      "generated_at": "2026-04-25T16:36:10.652134"
+    },
+    {
+      "english": "You're almost there. Almost.",
+      "chinese": "你快到了。就快了。",
+      "category": "Perseverance",
+      "generated_at": "2026-04-25T16:36:10.652136"
+    },
+    {
+      "english": "Every day counts. Every one.",
+      "chinese": "每天都算。都算。",
+      "category": "Perseverance",
+      "generated_at": "2026-04-25T16:36:10.652137"
+    },
+    {
+      "english": "A little more effort. Wow.",
+      "chinese": "再加把劲。哇。",
+      "category": "Perseverance",
+      "generated_at": "2026-04-25T16:36:10.652138"
     }
   ],
-  "last_updated": "2026-04-25T03:54:46.203162"
+  "last_updated": "2026-04-25T16:36:10.652140"
 }
