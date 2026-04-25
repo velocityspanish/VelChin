@@ -4109,7 +4109,37 @@
       "chinese": "你真棒, 真的。好骄傲。",
       "category": "Joy",
       "generated_at": "2026-04-25T19:36:53.113628"
+    },
+    {
+      "english": "Balance your work, and your fun.",
+      "chinese": "平衡工作，也要玩乐。",
+      "category": "Balance",
+      "generated_at": "2026-04-25T22:48:54.671084"
+    },
+    {
+      "english": "Rest your mind, recharge your soul.",
+      "chinese": "休息大脑，充实心灵。",
+      "category": "Balance",
+      "generated_at": "2026-04-25T22:48:54.671093"
+    },
+    {
+      "english": "Don't rush, take your time.",
+      "chinese": "别着急，慢慢来。",
+      "category": "Balance",
+      "generated_at": "2026-04-25T22:48:54.671095"
+    },
+    {
+      "english": "One step at a time. Easy.",
+      "chinese": "一步一步。轻松。",
+      "category": "Balance",
+      "generated_at": "2026-04-25T22:48:54.671096"
+    },
+    {
+      "english": "Stay steady, be present.",
+      "chinese": "保持稳定，活在当下。",
+      "category": "Balance",
+      "generated_at": "2026-04-25T22:48:54.671097"
     }
   ],
-  "last_updated": "2026-04-25T19:36:53.113630"
+  "last_updated": "2026-04-25T22:48:54.671099"
 }
