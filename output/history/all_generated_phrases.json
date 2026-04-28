@@ -4499,7 +4499,37 @@
       "chinese": "你带来, 很多快乐。",
       "category": "Happiness",
       "generated_at": "2026-04-28T15:16:03.796222"
+    },
+    {
+      "english": "Little by little, gets it done.",
+      "chinese": "积少成多，就能完成。",
+      "category": "Perseverance",
+      "generated_at": "2026-04-28T17:44:24.750931"
+    },
+    {
+      "english": "Keep going, slow is fine.",
+      "chinese": "继续，慢点也可以。",
+      "category": "Perseverance",
+      "generated_at": "2026-04-28T17:44:24.750939"
+    },
+    {
+      "english": "One step more, you're closer.",
+      "chinese": "再一步，就近了。",
+      "category": "Perseverance",
+      "generated_at": "2026-04-28T17:44:24.750941"
+    },
+    {
+      "english": "Persistence wins, remember that.",
+      "chinese": "坚持能赢，记住。",
+      "category": "Perseverance",
+      "generated_at": "2026-04-28T17:44:24.750942"
+    },
+    {
+      "english": "Fall down? Stand up again.",
+      "chinese": "摔倒了？再站起来。",
+      "category": "Perseverance",
+      "generated_at": "2026-04-28T17:44:24.750943"
     }
   ],
-  "last_updated": "2026-04-28T15:16:03.796223"
+  "last_updated": "2026-04-28T17:44:24.750945"
 }
