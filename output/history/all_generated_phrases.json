@@ -4439,7 +4439,37 @@
       "chinese": "快到了，别停下！",
       "category": "Perseverance",
       "generated_at": "2026-04-27T23:00:26.862429"
+    },
+    {
+      "english": "Thank you, for everything.",
+      "chinese": "谢谢你，为了一切。",
+      "category": "Gratitude",
+      "generated_at": "2026-04-28T04:37:33.657766"
+    },
+    {
+      "english": "So grateful, for this.",
+      "chinese": "非常感激，为了这个。",
+      "category": "Gratitude",
+      "generated_at": "2026-04-28T04:37:33.657776"
+    },
+    {
+      "english": "This means a lot, thank you.",
+      "chinese": "这意义重大，谢谢。",
+      "category": "Gratitude",
+      "generated_at": "2026-04-28T04:37:33.657777"
+    },
+    {
+      "english": "You are the best, really.",
+      "chinese": "你最棒了，真的。",
+      "category": "Gratitude",
+      "generated_at": "2026-04-28T04:37:33.657779"
+    },
+    {
+      "english": "My heart is full, thanks.",
+      "chinese": "我心满足，谢谢。",
+      "category": "Gratitude",
+      "generated_at": "2026-04-28T04:37:33.657780"
     }
   ],
-  "last_updated": "2026-04-27T23:00:26.862431"
+  "last_updated": "2026-04-28T04:37:33.657781"
 }
