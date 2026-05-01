@@ -20,6 +20,7 @@ if upload_dir.exists() and str(upload_dir) not in sys.path:
 # Import individual uploaders
 upload_to_facebook = None
 upload_to_instagram = None
+upload_to_youtube = None
 
 try:
     from upload_facebook import upload_to_facebook as fb_upload
@@ -32,6 +33,12 @@ try:
     upload_to_instagram = ig_upload
 except ImportError as e:
     print(f"[!] Instagram upload module not available: {e}")
+
+try:
+    from upload_to_youtube import upload_to_youtube as yt_upload
+    upload_to_youtube = yt_upload
+except ImportError as e:
+    print(f"[!] YouTube upload module not available: {e}")
 
 
 def get_latest_reel():
@@ -108,7 +115,7 @@ def generate_caption(phrases, category, platform="facebook"):
             "#chinesevocabulary",
             "#velocitychinese",
             "#dailychinese",
-            "#mandarin",
+            "#chinese",
             "#learnlanguages",
             "#chineseteacher",
             "#speakchinese",
@@ -144,7 +151,7 @@ def generate_caption(phrases, category, platform="facebook"):
             "#chinesevocabulary",
             "#velocitychinese",
             "#dailychinese",
-            "#mandarin",
+            "#chinese",
             "#learnlanguages",
             "#chineseteacher"
         ]
@@ -154,7 +161,7 @@ def generate_caption(phrases, category, platform="facebook"):
     return "\n".join(caption_lines)
 
 
-def upload_to_all_platforms(video_path, caption, category):
+def upload_to_all_platforms(video_path, caption, category, phrases=None):
     """Upload to all configured social media platforms with comprehensive summary"""
 
     results = {
@@ -169,7 +176,7 @@ def upload_to_all_platforms(video_path, caption, category):
     }
 
     print("\n" + "="*80)
-    print("🚀 VELOCITY CHINESE - MULTI-PLATFORM UPLOAD")
+    print("🚀 VELOCITY JAPANESE - MULTI-PLATFORM UPLOAD")
     print("="*80)
     print(f"Video: {video_path}")
     print(f"Category: {category}")
@@ -183,6 +190,7 @@ def upload_to_all_platforms(video_path, caption, category):
     platforms = [
         ("facebook", upload_to_facebook, "📘 Facebook"),
         ("instagram", upload_to_instagram, "📸 Instagram"),
+        ("youtube", upload_to_youtube, "🎥 YouTube"),
     ]
 
     for platform_name, upload_func, display_name in platforms:
@@ -197,13 +205,25 @@ def upload_to_all_platforms(video_path, caption, category):
                     upload_result = upload_func(
                         video_path=video_path,
                         description=caption,
-                        title=f"Spanish: {category}"
+                        title=f"Chinese: {category}"
                     )
                 elif platform_name == "instagram":
                     upload_result = upload_func(
                         video_path=video_path,
                         caption=caption,
                         is_story=False
+                    )
+                elif platform_name == "youtube":
+                    num_phrases = len(phrases) if phrases else 5
+                    from upload_to_youtube import generate_video_metadata
+                    yt_title, yt_description, yt_tags = generate_video_metadata(category, num_phrases, phrases)
+
+                    upload_result = upload_func(
+                        video_path=video_path,
+                        title=yt_title,
+                        description=yt_description,
+                        tags=yt_tags,
+                        category_id='22'
                     )
 
                 if upload_result:
@@ -282,7 +302,7 @@ def main():
     """Main upload workflow"""
 
     print("\n" + "="*80)
-    print("🇨🇳 VELOCITY CHINESE - AUTOMATED UPLOAD 🇨🇳")
+    print("🇨🇳 VELOCITY JAPANESE - AUTOMATED UPLOAD 🇨🇳")
     print("="*80)
 
     reel = get_latest_reel()
@@ -305,7 +325,8 @@ def main():
     results = upload_to_all_platforms(
         reel['video_path'],
         caption,
-        reel['category']
+        reel['category'],
+        reel['phrases']
     )
 
     results["phrases"] = reel['phrases']
