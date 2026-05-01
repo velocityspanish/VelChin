@@ -62,6 +62,87 @@ def get_authenticated_service():
     
     return build('youtube', 'v3', credentials=creds)
 
+def generate_video_metadata(category: str, num_phrases: int, phrases: list = None):
+    """Generate Chinese title, description, and tags for the video"""
+    
+    title = f"Chinese Learning: {num_phrases} Essential {category} Phrases"
+    
+    description_lines = [
+        f"🇨🇳 Learn Chinese with Velocity Chinese!",
+        f"",
+        f"📚 Category: {category}",
+        f"",
+        f"🎯 Master Chinese one phrase at a time! Today's {category} lesson:",
+        f""
+    ]
+    
+    if phrases:
+        emojis = ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣"]
+        for i, phrase in enumerate(phrases[:5], 0):
+            emoji = emojis[i] if i < len(emojis) else f"{i+1}."
+            description_lines.append(f"{emoji} {phrase['english']}")
+            description_lines.append(f"   📍 {phrase['chinese']}")
+            description_lines.append(f"   🔊 [{phrase.get('pinyin', '')}]")
+            description_lines.append("")
+
+    description_lines.extend([
+        f"💡 Tip: Repeat each phrase out loud 3 times!",
+        f"👍 Like this video if you learned something new!",
+        f"💬 Comment your favorite phrase below!",
+        f"🔔 Subscribe for daily Chinese lessons!",
+        f"",
+        f"📖 Pinyin Guide:",
+        f"   The phonetic spelling in brackets helps you say it correctly!",
+        f"",
+        f"#LearnChinese #ChineseLessons #ChineseForBeginners #LanguageLearning",
+        f"#Chinese #Education #Tutorial #DailyChinese #{category.replace(' ', '')}",
+        f"#VelocityChinese #ChinesePhrases #SpeakChinese"
+    ])
+    
+    description = "\n".join(description_lines)
+    
+    tags = [
+        "learn chinese",
+        "chinese lessons",
+        "chinese for beginners",
+        "chinese phrases",
+        "language learning",
+        "chinese tutorial",
+        "speak chinese",
+        category.lower(),
+        "education",
+        "daily chinese",
+        "velocity chinese",
+        "chinese learning"
+    ]
+    
+    return title, description, tags
+
+def _post_comment(youtube, video_id, text):
+    """Post a comment to the uploaded video."""
+    print(f"[youtube] Posting comment...")
+    try:
+        request = youtube.commentThreads().insert(
+            part="snippet",
+            body={
+                "snippet": {
+                    "videoId": video_id,
+                    "topLevelComment": {
+                        "snippet": {
+                            "textOriginal": text
+                        }
+                    }
+                }
+            }
+        )
+        response = request.execute()
+        print(f"[youtube] ✅ Comment posted! ID: {response['id']}")
+        print(f"[youtube] 📌 NOTE: YouTube API does not support pinning comments. Please pin manually if needed.")
+        return response
+    except Exception as e:
+        print(f"[youtube] ❌ Failed to post comment: {e}")
+        return None
+
 def upload_to_youtube(video_path, title, description, tags=None, category_id='22'):
     """Upload video to YouTube and return result."""
     if tags is None:
@@ -106,6 +187,10 @@ def upload_to_youtube(video_path, title, description, tags=None, category_id='22
     
     print(f"[youtube] ✅ Uploaded! Video ID: {response['id']}")
     print(f"[youtube] URL: https://youtube.com/shorts/{response['id']}")
+    
+    # Post the title and description as a comment
+    comment_text = f"🎥 {title}\n\n{description}"
+    _post_comment(youtube, response['id'], comment_text)
     
     return response
 
