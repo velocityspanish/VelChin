@@ -4919,7 +4919,37 @@
       "chinese": "小步子, 大进步, 记住。",
       "category": "Confidence",
       "generated_at": "2026-05-01T22:57:24.064465"
+    },
+    {
+      "english": "Slow wins, the long race.",
+      "chinese": "慢赢, 长跑。",
+      "category": "Patience",
+      "generated_at": "2026-05-02T04:21:41.651849"
+    },
+    {
+      "english": "Good things, take their time.",
+      "chinese": "好事, 需耐心。",
+      "category": "Patience",
+      "generated_at": "2026-05-02T04:21:41.651860"
+    },
+    {
+      "english": "Don't rush, the blooming.",
+      "chinese": "莫急, 花开。",
+      "category": "Patience",
+      "generated_at": "2026-05-02T04:21:41.651861"
+    },
+    {
+      "english": "Steady, brings the reward.",
+      "chinese": "稳当, 得收获。",
+      "category": "Patience",
+      "generated_at": "2026-05-02T04:21:41.651862"
+    },
+    {
+      "english": "Water carves, stone, slowly.",
+      "chinese": "水滴, 石穿, 慢慢。",
+      "category": "Patience",
+      "generated_at": "2026-05-02T04:21:41.651863"
     }
   ],
-  "last_updated": "2026-05-01T22:57:24.064466"
+  "last_updated": "2026-05-02T04:21:41.651865"
 }
