@@ -5099,7 +5099,37 @@
       "chinese": "新的一天，带来新机会。",
       "category": "Positive Life",
       "generated_at": "2026-05-03T14:06:22.199170"
+    },
+    {
+      "english": "Let it go, find peace.",
+      "chinese": "放下吧，找宁静。",
+      "category": "Forgiveness",
+      "generated_at": "2026-05-03T16:43:08.036537"
+    },
+    {
+      "english": "Sorry, I was wrong.",
+      "chinese": "对不起，我错了。",
+      "category": "Forgiveness",
+      "generated_at": "2026-05-03T16:43:08.036548"
+    },
+    {
+      "english": "Forgive me, please.",
+      "chinese": "原谅我，拜托了。",
+      "category": "Forgiveness",
+      "generated_at": "2026-05-03T16:43:08.036549"
+    },
+    {
+      "english": "Let bygones, be bygones.",
+      "chinese": "既往不咎，向前看。",
+      "category": "Forgiveness",
+      "generated_at": "2026-05-03T16:43:08.036550"
+    },
+    {
+      "english": "No hard feelings, okay?",
+      "chinese": "别介意，行吗？",
+      "category": "Forgiveness",
+      "generated_at": "2026-05-03T16:43:08.036551"
     }
   ],
-  "last_updated": "2026-05-03T14:06:22.199172"
+  "last_updated": "2026-05-03T16:43:08.036553"
 }
