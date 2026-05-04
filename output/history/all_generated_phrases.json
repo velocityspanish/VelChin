@@ -5189,7 +5189,37 @@
       "chinese": "安静说话, 你听。",
       "category": "Mindfulness",
       "generated_at": "2026-05-03T22:55:05.120557"
+    },
+    {
+      "english": "Don't give up, try again!",
+      "chinese": "别放弃，再试试！",
+      "category": "Hope",
+      "generated_at": "2026-05-04T04:45:12.171195"
+    },
+    {
+      "english": "Tomorrow is another day!",
+      "chinese": "明天又是新一天！",
+      "category": "Hope",
+      "generated_at": "2026-05-04T04:45:12.171205"
+    },
+    {
+      "english": "You got this, believe in yourself!",
+      "chinese": "你行的，相信你自己！",
+      "category": "Hope",
+      "generated_at": "2026-05-04T04:45:12.171207"
+    },
+    {
+      "english": "Chin up, things will get better!",
+      "chinese": "抬起头，会好起来的！",
+      "category": "Hope",
+      "generated_at": "2026-05-04T04:45:12.171208"
+    },
+    {
+      "english": "Keep pushing, towards your dream!",
+      "chinese": "继续努力，朝着梦想！",
+      "category": "Hope",
+      "generated_at": "2026-05-04T04:45:12.171208"
     }
   ],
-  "last_updated": "2026-05-03T22:55:05.120558"
+  "last_updated": "2026-05-04T04:45:12.171210"
 }
