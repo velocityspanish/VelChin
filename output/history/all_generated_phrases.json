@@ -5369,7 +5369,37 @@
       "chinese": "用心听，真心。",
       "category": "Kindness",
       "generated_at": "2026-05-05T17:28:23.361709"
+    },
+    {
+      "english": "Lost in translation? Cool, that's where the fun is!",
+      "chinese": "翻译卡壳？没事，好玩才刚开始！",
+      "category": "Success",
+      "generated_at": "2026-05-05T21:55:52.842007"
+    },
+    {
+      "english": "My Chinese is broken, but my spirit is not!",
+      "chinese": "我中文烂，但精神不烂！",
+      "category": "Success",
+      "generated_at": "2026-05-05T21:55:52.842016"
+    },
+    {
+      "english": "Speak slowly, please, my brain is buffering.",
+      "chinese": "请说慢点，我的脑子还在加载。",
+      "category": "Success",
+      "generated_at": "2026-05-05T21:55:52.842017"
+    },
+    {
+      "english": "Accidentally ordered spicy food? Oops, delicious!",
+      "chinese": "不小心点了辣的？哎呀，好吃！",
+      "category": "Success",
+      "generated_at": "2026-05-05T21:55:52.842018"
+    },
+    {
+      "english": "I understand a little, my progress is showing!",
+      "chinese": "我懂一点了，进步在闪耀！",
+      "category": "Success",
+      "generated_at": "2026-05-05T21:55:52.842020"
     }
   ],
-  "last_updated": "2026-05-05T17:28:23.361711"
+  "last_updated": "2026-05-05T21:55:52.842021"
 }
