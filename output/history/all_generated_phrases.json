@@ -5459,7 +5459,37 @@
       "chinese": "你已尽力，足够完美。",
       "category": "Strength",
       "generated_at": "2026-05-06T04:37:04.911159"
+    },
+    {
+      "english": "Slowly, we learn best.",
+      "chinese": "慢慢来，学得好。",
+      "category": "Patience",
+      "generated_at": "2026-05-06T15:23:00.862150"
+    },
+    {
+      "english": "A little bit, each day.",
+      "chinese": "每天，一点点。",
+      "category": "Patience",
+      "generated_at": "2026-05-06T15:23:00.862161"
+    },
+    {
+      "english": "Don't worry, just breathe.",
+      "chinese": "别担心，先呼吸。",
+      "category": "Patience",
+      "generated_at": "2026-05-06T15:23:00.862162"
+    },
+    {
+      "english": "One step, then another.",
+      "chinese": "一步，然后一步。",
+      "category": "Patience",
+      "generated_at": "2026-05-06T15:23:00.862163"
+    },
+    {
+      "english": "Rome wasn't built, overnight.",
+      "chinese": "罗马不是，一天建。",
+      "category": "Patience",
+      "generated_at": "2026-05-06T15:23:00.862164"
     }
   ],
-  "last_updated": "2026-05-06T04:37:04.911161"
+  "last_updated": "2026-05-06T15:23:00.862166"
 }
