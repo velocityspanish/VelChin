@@ -6539,7 +6539,37 @@
       "chinese": "放下, 负重物。",
       "category": "Inner Peace",
       "generated_at": "2026-05-13T15:42:01.974503"
+    },
+    {
+      "english": "Mistakes happen, let's learn.",
+      "chinese": "错误难免，一起学习。",
+      "category": "Forgiveness",
+      "generated_at": "2026-05-13T17:58:15.345559"
+    },
+    {
+      "english": "Let's clear the air.",
+      "chinese": "我们开诚布公吧。",
+      "category": "Forgiveness",
+      "generated_at": "2026-05-13T17:58:15.345568"
+    },
+    {
+      "english": "I forgive you, truly.",
+      "chinese": "我原谅你，真心实意。",
+      "category": "Forgiveness",
+      "generated_at": "2026-05-13T17:58:15.345570"
+    },
+    {
+      "english": "We can move past this.",
+      "chinese": "我们可以翻篇。",
+      "category": "Forgiveness",
+      "generated_at": "2026-05-13T17:58:15.345572"
+    },
+    {
+      "english": "Let's start anew, together.",
+      "chinese": "重新开始，一起。",
+      "category": "Forgiveness",
+      "generated_at": "2026-05-13T17:58:15.345573"
     }
   ],
-  "last_updated": "2026-05-13T15:42:01.974505"
+  "last_updated": "2026-05-13T17:58:15.345574"
 }
