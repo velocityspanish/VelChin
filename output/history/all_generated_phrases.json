@@ -6809,7 +6809,37 @@
       "chinese": "每一天，一项新技能。",
       "category": "Growth",
       "generated_at": "2026-05-17T20:36:24.188376"
+    },
+    {
+      "english": "Effort plants seeds, results bloom.",
+      "chinese": "努力种下，成果开花。",
+      "category": "Success",
+      "generated_at": "2026-05-17T23:00:00.969189"
+    },
+    {
+      "english": "Curiosity, is your best teacher.",
+      "chinese": "好奇心，最好的老师。",
+      "category": "Success",
+      "generated_at": "2026-05-17T23:00:00.969198"
+    },
+    {
+      "english": "Repetition, makes learning stick.",
+      "chinese": "重复，让学习牢记。",
+      "category": "Success",
+      "generated_at": "2026-05-17T23:00:00.969199"
+    },
+    {
+      "english": "Speaking out, builds your voice.",
+      "chinese": "大胆说，练就声音。",
+      "category": "Success",
+      "generated_at": "2026-05-17T23:00:00.969200"
+    },
+    {
+      "english": "Each word, a new connection.",
+      "chinese": "每个词，新的连接。",
+      "category": "Success",
+      "generated_at": "2026-05-17T23:00:00.969201"
     }
   ],
-  "last_updated": "2026-05-17T20:36:24.188377"
+  "last_updated": "2026-05-17T23:00:00.969203"
 }
