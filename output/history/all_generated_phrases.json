@@ -6869,7 +6869,37 @@
       "chinese": "中文是首歌，去唱吧。",
       "category": "Growth",
       "generated_at": "2026-05-18T05:10:40.540346"
+    },
+    {
+      "english": "Let it go, friend.",
+      "chinese": "放轻松, 朋友。",
+      "category": "Forgiveness",
+      "generated_at": "2026-05-18T16:20:27.007984"
+    },
+    {
+      "english": "Move on, breathe deep.",
+      "chinese": "向前看, 深呼吸。",
+      "category": "Forgiveness",
+      "generated_at": "2026-05-18T16:20:27.007992"
+    },
+    {
+      "english": "It's okay, really.",
+      "chinese": "没关系, 真的。",
+      "category": "Forgiveness",
+      "generated_at": "2026-05-18T16:20:27.007994"
+    },
+    {
+      "english": "Start fresh, from here.",
+      "chinese": "重新开始, 从这里。",
+      "category": "Forgiveness",
+      "generated_at": "2026-05-18T16:20:27.007995"
+    },
+    {
+      "english": "Don't hold on, okay?",
+      "chinese": "别再想了, 好吗?",
+      "category": "Forgiveness",
+      "generated_at": "2026-05-18T16:20:27.007996"
     }
   ],
-  "last_updated": "2026-05-18T05:10:40.540348"
+  "last_updated": "2026-05-18T16:20:27.007998"
 }
