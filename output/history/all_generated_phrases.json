@@ -7559,7 +7559,37 @@
       "chinese": "原谅，不是忘记，是疗愈。",
       "category": "Forgiveness",
       "generated_at": "2026-06-14T20:13:40.976738"
+    },
+    {
+      "english": "Speak slow, clearly, you got this.",
+      "chinese": "说慢点，清楚点，你能行。",
+      "category": "Confidence",
+      "generated_at": "2026-06-14T23:18:25.101227"
+    },
+    {
+      "english": "Mistakes happen, no worries.",
+      "chinese": "会犯错，别担心。",
+      "category": "Confidence",
+      "generated_at": "2026-06-14T23:18:25.101240"
+    },
+    {
+      "english": "Try again, you'll improve.",
+      "chinese": "再试一次，会进步。",
+      "category": "Confidence",
+      "generated_at": "2026-06-14T23:18:25.101242"
+    },
+    {
+      "english": "Your accent is fine, really.",
+      "chinese": "你的口音挺好，真的。",
+      "category": "Confidence",
+      "generated_at": "2026-06-14T23:18:25.101243"
+    },
+    {
+      "english": "Understand slowly, it’s okay.",
+      "chinese": "慢慢理解，没关系。",
+      "category": "Confidence",
+      "generated_at": "2026-06-14T23:18:25.101244"
     }
   ],
-  "last_updated": "2026-06-14T20:13:40.976740"
+  "last_updated": "2026-06-14T23:18:25.101246"
 }
