@@ -22,6 +22,7 @@ POLLINATIONS_API_KEY = os.getenv("POLLINATIONS_API_KEY")
 
 # Directories
 BASE_DIR = Path(__file__).parent
+FONTS_DIR = BASE_DIR / "fonts"
 OUTPUT_DIR = BASE_DIR / "output"
 IMAGES_DIR = OUTPUT_DIR / "images"
 AUDIO_DIR = OUTPUT_DIR / "audio"
@@ -729,9 +730,9 @@ def generate_complete_image(phrase_data: dict, category_english: str, output_pat
         "C:/Windows/Fonts/segoeusbi.ttf",  # Windows Segoe UI Semibold
     ]
 
-    # Chinese fonts (EXTRA BOLD for better visibility) - Linux priority for GitHub Actions
+    # Chinese fonts (EXTRA BOLD for better visibility) - local font priority
     chinese_font_paths = [
-        "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",  # Linux WenQuanYi Zen Hei (GitHub Actions) - PRIORITY
+        str(FONTS_DIR / "NotoSansSC-Bold.ttf"),  # Local downloaded font
         "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",  # Linux Noto CJK Bold
         "/usr/share/fonts/truetype/wqy/wqy-microhei.ttc",  # Linux WenQuanYi Micro Hei
         "/usr/share/fonts/noto-cjk/NotoSansCJK-Bold.ttc",  # Alternative Linux Noto
