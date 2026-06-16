@@ -7829,7 +7829,37 @@
       "chinese": "你能忘了它吗，甜心？",
       "category": "Forgiveness",
       "generated_at": "2026-06-16T13:54:24.651439"
+    },
+    {
+      "english": "Keep trying, you'll get there.",
+      "chinese": "继续试，你会到达。",
+      "category": "Perseverance",
+      "generated_at": "2026-06-16T14:02:46.185360"
+    },
+    {
+      "english": "Don't quit, just push.",
+      "chinese": "别放弃，推一把。",
+      "category": "Perseverance",
+      "generated_at": "2026-06-16T14:02:46.185371"
+    },
+    {
+      "english": "Slow progress, still counts.",
+      "chinese": "慢进步，也算数。",
+      "category": "Perseverance",
+      "generated_at": "2026-06-16T14:02:46.185373"
+    },
+    {
+      "english": "One percent better, daily.",
+      "chinese": "每天，好百分之一。",
+      "category": "Perseverance",
+      "generated_at": "2026-06-16T14:02:46.185374"
+    },
+    {
+      "english": "You've got this, keep going.",
+      "chinese": "你行，继续冲。",
+      "category": "Perseverance",
+      "generated_at": "2026-06-16T14:02:46.185375"
     }
   ],
-  "last_updated": "2026-06-16T13:54:24.651440"
+  "last_updated": "2026-06-16T14:02:46.185377"
 }
