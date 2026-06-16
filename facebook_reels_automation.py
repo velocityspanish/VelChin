@@ -529,17 +529,25 @@ def generate_all_audio(phrases: list, output_dir: str):
 
         print(f"    ⏱️  Total: {total_duration:.2f}s (EN: {en_duration:.2f}s + pause: {pause_between}s + CN: {cn_duration:.2f}s)")
 
-        # Combine audio files
+        # Generate silence for pause
+        silence_file = output_dir / f"silence_{i}.mp3"
+        subprocess.run(["ffmpeg", "-y", "-f", "lavfi", "-i", "anullsrc=r=24000:cl=mono", "-t", str(pause_between), str(silence_file)],
+                       capture_output=True)
+
+        # Combine audio: English + silence + Chinese
         cmd = [
             "ffmpeg", "-y",
             "-i", str(english_file),
+            "-i", str(silence_file),
             "-i", str(chinese_file),
-            "-filter_complex", f"[0:a][1:a]concat=n=2:v=0:a=1[out]",
+            "-filter_complex", "[0:a][1:a][2:a]concat=n=3:v=0:a=1[out]",
             "-map", "[out]",
             str(combined_file)
         ]
 
         result = subprocess.run(cmd, capture_output=True, text=True)
+        if silence_file.exists():
+            silence_file.unlink()
 
         if result.returncode != 0:
             concat_file = output_dir / f"concat_{i}.txt"
@@ -746,7 +754,7 @@ def generate_complete_image(phrase_data: dict, category_english: str, output_pat
     font_branding = load_font(english_font_paths, 55)
 
     # Chinese text fonts - EXTRA BOLD and BIGGER (use BOLD fonts)
-    font_chinese = load_font(chinese_font_paths, 85)
+    font_chinese = load_font(chinese_font_paths, 65)
 
     # Pinyin fonts - EXTRA BOLD and LARGER (use BOLD Chinese fonts)
     font_pinyin = load_font(chinese_font_paths, 65)
@@ -756,33 +764,59 @@ def generate_complete_image(phrase_data: dict, category_english: str, output_pat
     pinyin = phrase_data.get("pinyin", "")
 
     def wrap_text(text, font, max_width):
-        """Wrap text to fit within max_width - ensures text never overflows"""
-        words = text.split()
+        """Wrap text to fit within max_width - handles both English and CJK characters"""
         lines = []
-        current_line = []
-        for word in words:
-            test_line = ' '.join(current_line + [word])
-            bbox = draw.textbbox((0, 0), test_line, font=font)
-            width = bbox[2] - bbox[0]
-            if width <= max_width:
-                current_line.append(word)
-            else:
-                if current_line:
-                    lines.append(' '.join(current_line))
-                current_line = [word]
-        if current_line:
-            lines.append(' '.join(current_line))
+
+        is_cjk = any('\u3040' <= c <= '\u309f' or
+                      '\u30a0' <= c <= '\u30ff' or
+                      '\u4e00' <= c <= '\u9fff' or
+                      '\u3400' <= c <= '\u4dbf' or
+                      '\uf900' <= c <= '\ufaff'
+                      for c in text)
+
+        if is_cjk:
+            current_line = ''
+            for char in text:
+                test_line = current_line + char
+                bbox = draw.textbbox((0, 0), test_line, font=font)
+                width = bbox[2] - bbox[0]
+                if width <= max_width:
+                    current_line = test_line
+                else:
+                    if current_line:
+                        lines.append(current_line)
+                    current_line = char
+            if current_line:
+                lines.append(current_line)
+        else:
+            words = text.split()
+            current_line = []
+            for word in words:
+                test_line = ' '.join(current_line + [word])
+                bbox = draw.textbbox((0, 0), test_line, font=font)
+                width = bbox[2] - bbox[0]
+                if width <= max_width:
+                    current_line.append(word)
+                else:
+                    if current_line:
+                        lines.append(' '.join(current_line))
+                    current_line = [word]
+            if current_line:
+                lines.append(' '.join(current_line))
+
         return lines
 
-    # Category at top - with proper container
+    # Category at top - rounded container
     category_text = category_english.upper()
-    category_bbox = draw.textbbox((VIDEO_WIDTH // 2, 140), category_text, font=font_category, anchor="mm")
-    padding = 30  # Increased padding
-    draw.rectangle(
-        [(category_bbox[0] - padding, category_bbox[1] - padding),
-         (category_bbox[2] + padding, category_bbox[3] + padding)],
-        fill=(0, 0, 0, 200)
-    )
+    cat_bb = draw.textbbox((0, 0), category_text, font=font_category)
+    cat_tw = cat_bb[2] - cat_bb[0]
+    cat_th = cat_bb[3] - cat_bb[1]
+    cat_pad = 30
+    cat_x1 = VIDEO_WIDTH // 2 - cat_tw // 2 - cat_pad
+    cat_y1 = 140 - cat_th // 2 - cat_pad
+    cat_x2 = VIDEO_WIDTH // 2 + cat_tw // 2 + cat_pad
+    cat_y2 = 140 + cat_th // 2 + cat_pad
+    rounded_rect(draw, (cat_x1, cat_y1, cat_x2, cat_y2), 25, fill=(0, 0, 0, 200))
     draw.text(
         (VIDEO_WIDTH // 2, 140),
         category_text,
@@ -793,136 +827,72 @@ def generate_complete_image(phrase_data: dict, category_english: str, output_pat
         stroke_fill=(0, 0, 0)
     )
 
-    # English text - with solid background container
-    english_y = 520
-    # Use safer max_width to prevent overflow on all systems
-    english_lines = wrap_text(english, font_large, VIDEO_WIDTH - 200)  # Extra safe margin
-    line_spacing = 100
-    total_height = len(english_lines) * line_spacing
+    # English text - centered container with symmetric padding
+    english_lines = wrap_text(english, font_large, VIDEO_WIDTH - 200)
+    en_line_spacing = 100
+    en_total_h = len(english_lines) * en_line_spacing
+    en_pad = 55
+    en_center = 520 + ((len(english_lines) - 1) * en_line_spacing) // 2
+    en_y1 = en_center - en_total_h // 2 - en_pad
+    en_y2 = en_center + en_total_h // 2 + en_pad
 
-    # Calculate container size BEFORE drawing
-    box_top = english_y - 70
-    box_bottom = english_y + total_height + 30
-
-    # Solid background box for English (dark blue) - wider container
-    draw.rectangle(
-        [(100, box_top), (VIDEO_WIDTH - 100, box_bottom)],  # 100px margins (was 70px)
-        fill=(30, 40, 80, 240)
-    )
+    rounded_rect(draw, (100, en_y1, VIDEO_WIDTH - 100, en_y2), 28,
+                 fill=(30, 40, 80, 240))
 
     for i, line in enumerate(english_lines):
-        y_pos = english_y + (i * line_spacing)
+        y_pos = 520 + (i * en_line_spacing)
         draw.text(
-            (VIDEO_WIDTH // 2, y_pos),
-            line,
-            fill=(255, 255, 255),
-            font=font_large,
-            anchor="mm",
-            stroke_width=5,  # THICKER stroke for BOLDER look
-            stroke_fill=(0, 0, 0)
+            (VIDEO_WIDTH // 2, y_pos), line,
+            fill=(255, 255, 255), font=font_large,
+            anchor="mm", stroke_width=5, stroke_fill=(0, 0, 0)
         )
 
-    # Chinese text - with BOLDER font and DYNAMIC container that expands with text
-    chinese_y = english_y + total_height + 130
-    # Wrap text but also calculate actual width for dynamic container
-    max_chinese_width = VIDEO_WIDTH - 200  # Safe margin
-    chinese_lines = wrap_text(chinese, font_chinese, max_chinese_width)
-    
-    # Calculate actual text width for dynamic container sizing
-    max_chinese_text_width = 0
-    for line in chinese_lines:
-        bbox = draw.textbbox((0, 0), line, font=font_chinese)
-        text_width = bbox[2] - bbox[0]
-        max_chinese_text_width = max(max_chinese_text_width, text_width)
-    
-    # Dynamic container sizing - expands based on text, but stays within bounds
-    chinese_padding_x = 60
-    chinese_min_width = 300
-    chinese_container_width = max(chinese_min_width, max_chinese_text_width + (chinese_padding_x * 2))
-    chinese_container_width = min(chinese_container_width, VIDEO_WIDTH - 100)  # Max constraint
-    
-    # Calculate container position (centered)
-    chinese_box_left = (VIDEO_WIDTH - chinese_container_width) // 2
-    chinese_box_right = (VIDEO_WIDTH + chinese_container_width) // 2
-    
-    total_height = len(chinese_lines) * line_spacing
-    box_top = chinese_y - 70
-    box_bottom = chinese_y + total_height + 30
+    # Chinese text - centered container with symmetric padding
+    chinese_lines = wrap_text(chinese, font_chinese, VIDEO_WIDTH - 200)
+    cn_line_spacing = 85
+    cn_total_h = len(chinese_lines) * cn_line_spacing
+    cn_pad = 55
+    cn_y1 = en_y2 + 50
+    cn_center = cn_y1 + cn_pad + (len(chinese_lines) - 1) * cn_line_spacing // 2 + cn_total_h // 2
+    cn_y2 = cn_y1 + cn_total_h + cn_pad * 2
 
-    # Solid background box for Chinese (warm brown/red) - DYNAMIC width based on text
-    draw.rectangle(
-        [(chinese_box_left, box_top), (chinese_box_right, box_bottom)],
-        fill=(85, 45, 45, 240)
-    )
+    rounded_rect(draw, (50, cn_y1, VIDEO_WIDTH - 50, cn_y2), 24,
+                 fill=(85, 45, 45, 240))
 
     for i, line in enumerate(chinese_lines):
-        y_pos = chinese_y + (i * line_spacing)
+        y_pos = cn_y1 + cn_pad + i * cn_line_spacing + cn_line_spacing // 2
         draw.text(
-            (VIDEO_WIDTH // 2, y_pos),
-            line,
-            fill=(255, 255, 50),  # Brighter yellow
-            font=font_chinese,
-            anchor="mm",
-            stroke_width=6,  # EVEN THICKER stroke for CHINESE (max boldness)
-            stroke_fill=(0, 0, 0)
+            (VIDEO_WIDTH // 2, y_pos), line,
+            fill=(255, 255, 50), font=font_chinese,
+            anchor="mm", stroke_width=5, stroke_fill=(0, 0, 0)
         )
 
-    # Pinyin - EXTRA BOLD and LARGER with dynamic container
-    # Add PROPER spacing between Chinese box and Pinyin box (no overlap)
-    pinyin_y = chinese_y + total_height + 150  # Increased from 110 to 150 for proper gap
+    # Pinyin - centered container with symmetric padding
     pinyin_text = f"[{pinyin}]"
-    
-    # Wrap pinyin text to fit
-    max_pron_width = 750  # Max width before wrapping
-    pinyin_lines = wrap_text(pinyin_text, font_pinyin, max_pron_width)
-    
-    # Calculate actual text width for container sizing
-    max_pron_text_width = 0
-    for line in pinyin_lines:
-        bbox = draw.textbbox((0, 0), line, font=font_pinyin)
-        text_width = bbox[2] - bbox[0]
-        max_pron_text_width = max(max_pron_text_width, text_width)
-    
-    # Dynamic container sizing - expands based on text, but stays within bounds
-    pron_padding_x = 55
-    pron_padding_y = 30
-    min_pron_width = 280
-    pron_container_width = max(min_pron_width, max_pron_text_width + (pron_padding_x * 2))
-    pron_container_width = min(pron_container_width, VIDEO_WIDTH - 120)  # Max constraint
-    
-    # Calculate container dimensions
-    pron_line_height = 65  # Increased spacing
-    total_pron_height = len(pinyin_lines) * pron_line_height
-    box_top = pinyin_y - total_pron_height // 2 - pron_padding_y + 10
-    box_bottom = pinyin_y + (len(pinyin_lines) - 1) * pron_line_height + total_pron_height // 2 + pron_padding_y - 10
-    box_left = (VIDEO_WIDTH - pron_container_width) // 2
-    box_right = (VIDEO_WIDTH + pron_container_width) // 2
+    pinyin_lines = wrap_text(pinyin_text, font_pinyin, VIDEO_WIDTH - 160)
 
-    # Draw DARK background box for pinyin (more visible, more opaque)
-    draw.rectangle(
-        [(box_left, box_top), (box_right, box_bottom)],
-        fill=(40, 40, 60, 230)  # Darker, more opaque
-    )
+    if pinyin_lines:
+        py_line_spacing = 65
+        py_total_h = len(pinyin_lines) * py_line_spacing
+        py_pad = 35
+        py_y1 = cn_y2 + 40
+        py_y2 = py_y1 + py_total_h + py_pad * 2
 
-    # Draw pinyin text - EXTRA BOLD
-    for i, pinyin_line in enumerate(pinyin_lines):
-        y_pos = pinyin_y + (i * pron_line_height)
-        draw.text(
-            (VIDEO_WIDTH // 2, y_pos),
-            pinyin_line,
-            fill=(255, 255, 255),  # Brightest white
-            font=font_pinyin,
-            anchor="mm",
-            stroke_width=4,  # THICKER stroke for PINYIN (max boldness)
-            stroke_fill=(0, 0, 0)
-        )
+        rounded_rect(draw, (70, py_y1, VIDEO_WIDTH - 70, py_y2), 18,
+                     fill=(40, 40, 60, 230))
+
+        for i, py_line in enumerate(pinyin_lines):
+            y_pos = py_y1 + py_pad + i * py_line_spacing + py_line_spacing // 2
+            draw.text(
+                (VIDEO_WIDTH // 2, y_pos), py_line,
+                fill=(255, 255, 255), font=font_pinyin,
+                anchor="mm", stroke_width=3, stroke_fill=(0, 0, 0)
+            )
 
     # Branding at bottom - BOLDER
     branding_y = VIDEO_HEIGHT - 90
-    draw.rectangle(
-        [(0, branding_y - 40), (VIDEO_WIDTH, branding_y + 60)],
-        fill=(0, 0, 0, 200)  # More opaque
-    )
+    rounded_rect(draw, (0, branding_y - 40, VIDEO_WIDTH, branding_y + 60),
+                 30, fill=(0, 0, 0, 200))
     draw.text(
         (VIDEO_WIDTH // 2, branding_y),
         "VELOCITY CHINESE",
@@ -942,6 +912,17 @@ def generate_complete_image(phrase_data: dict, category_english: str, output_pat
     return output_path
 
 
+def rounded_rect(draw, bbox, radius, fill=None, outline=None, width=1):
+    x1, y1, x2, y2 = bbox
+    r = min(radius, (x2 - x1) // 2, (y2 - y1) // 2)
+    draw.pieslice([x1, y1, x1 + r*2, y1 + r*2], 180, 270, fill=fill)
+    draw.pieslice([x2 - r*2, y1, x2, y1 + r*2], 270, 360, fill=fill)
+    draw.pieslice([x1, y2 - r*2, x1 + r*2, y2], 90, 180, fill=fill)
+    draw.pieslice([x2 - r*2, y2 - r*2, x2, y2], 0, 90, fill=fill)
+    draw.rectangle([x1 + r, y1, x2 - r, y2], fill=fill)
+    draw.rectangle([x1, y1 + r, x2, y2 - r], fill=fill)
+
+
 # ============== VIDEO CREATION ==============
 
 def create_video_from_images_audio(image_files: list, audio_files: list, combined_audio: str, output_file: str):
@@ -954,7 +935,7 @@ def create_video_from_images_audio(image_files: list, audio_files: list, combine
 
     for i, (img_path, audio_info) in enumerate(zip(image_files, audio_files)):
         duration = audio_info['duration']
-        print(f"  Image {i+1}/{len(image_files)}: {duration:.2f}s (EN: {audio_info.get('en_duration', 0):.1f}s + FR: {audio_info.get('fr_duration', 0):.1f}s)")
+        print(f"  Image {i+1}/{len(image_files)}: {duration:.2f}s (EN: {audio_info.get('en_duration', 0):.1f}s + CN: {audio_info.get('cn_duration', 0):.1f}s)")
 
         temp_clip = Path(output_file).parent / f"temp_clip_{i:02d}.mp4"
         temp_clips.append(temp_clip)
