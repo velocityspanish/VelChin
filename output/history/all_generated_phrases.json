@@ -7799,7 +7799,37 @@
       "chinese": "明天有阳光，即使现在有云！",
       "category": "Hope",
       "generated_at": "2026-06-16T13:46:44.297337"
+    },
+    {
+      "english": "Sorry, my love, let's move on.",
+      "chinese": "抱歉，我的爱，我们继续吧。",
+      "category": "Forgiveness",
+      "generated_at": "2026-06-16T13:54:24.651422"
+    },
+    {
+      "english": "My mistake, darling, pretty please?",
+      "chinese": "我的错，亲爱的，好不好？",
+      "category": "Forgiveness",
+      "generated_at": "2026-06-16T13:54:24.651435"
+    },
+    {
+      "english": "Forgive me, handsome/beautiful, okay?",
+      "chinese": "原谅我，帅哥/美女，好吗？",
+      "category": "Forgiveness",
+      "generated_at": "2026-06-16T13:54:24.651436"
+    },
+    {
+      "english": "Oops, I messed up, my dear.",
+      "chinese": "哎呀，我搞砸了，亲爱的。",
+      "category": "Forgiveness",
+      "generated_at": "2026-06-16T13:54:24.651437"
+    },
+    {
+      "english": "Can you forget it, sweetie?",
+      "chinese": "你能忘了它吗，甜心？",
+      "category": "Forgiveness",
+      "generated_at": "2026-06-16T13:54:24.651439"
     }
   ],
-  "last_updated": "2026-06-16T13:46:44.297338"
+  "last_updated": "2026-06-16T13:54:24.651440"
 }
