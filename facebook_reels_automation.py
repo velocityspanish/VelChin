@@ -828,16 +828,18 @@ def generate_complete_image(phrase_data: dict, category_english: str, output_pat
         stroke_fill=(0, 0, 0)
     )
 
-    # English text - centered container with symmetric padding
-    english_lines = wrap_text(english, font_large, VIDEO_WIDTH - 200)
-    en_line_spacing = 100
+    # English text - centered container with safe margins for stroke
+    en_margin = 130
+    en_max_w = VIDEO_WIDTH - en_margin * 2
+    english_lines = wrap_text(english, font_large, en_max_w)
+    en_line_spacing = 110
     en_total_h = len(english_lines) * en_line_spacing
-    en_pad = 55
+    en_pad = 60
     en_center = 520 + ((len(english_lines) - 1) * en_line_spacing) // 2
     en_y1 = en_center - en_total_h // 2 - en_pad
     en_y2 = en_center + en_total_h // 2 + en_pad
 
-    rounded_rect(draw, (100, en_y1, VIDEO_WIDTH - 100, en_y2), 28,
+    rounded_rect(draw, (en_margin, en_y1, VIDEO_WIDTH - en_margin, en_y2), 28,
                  fill=(30, 40, 80, 240))
 
     for i, line in enumerate(english_lines):
@@ -848,16 +850,17 @@ def generate_complete_image(phrase_data: dict, category_english: str, output_pat
             anchor="mm", stroke_width=5, stroke_fill=(0, 0, 0)
         )
 
-    # Chinese text - centered container with symmetric padding
-    chinese_lines = wrap_text(chinese, font_chinese, VIDEO_WIDTH - 200)
-    cn_line_spacing = 85
+    # Chinese text - centered container with safe margins
+    cn_margin = 80
+    cn_max_w = VIDEO_WIDTH - cn_margin * 2
+    chinese_lines = wrap_text(chinese, font_chinese, cn_max_w)
+    cn_line_spacing = 90
     cn_total_h = len(chinese_lines) * cn_line_spacing
-    cn_pad = 55
+    cn_pad = 60
     cn_y1 = en_y2 + 50
-    cn_center = cn_y1 + cn_pad + (len(chinese_lines) - 1) * cn_line_spacing // 2 + cn_total_h // 2
     cn_y2 = cn_y1 + cn_total_h + cn_pad * 2
 
-    rounded_rect(draw, (50, cn_y1, VIDEO_WIDTH - 50, cn_y2), 24,
+    rounded_rect(draw, (cn_margin, cn_y1, VIDEO_WIDTH - cn_margin, cn_y2), 24,
                  fill=(85, 45, 45, 240))
 
     for i, line in enumerate(chinese_lines):
