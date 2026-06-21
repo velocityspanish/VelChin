@@ -8609,7 +8609,37 @@
       "chinese": "我们一起面对，所有挑战。",
       "category": "Friendship",
       "generated_at": "2026-06-21T15:06:15.673453"
+    },
+    {
+      "english": "Not 'very good', try 'pretty good'.",
+      "chinese": "不是“很棒”，试试“不错”。",
+      "category": "Joy",
+      "generated_at": "2026-06-21T17:24:45.928286"
+    },
+    {
+      "english": "Forget 'so so', say 'so so'.",
+      "chinese": "忘掉“马马虎虎”，说“还好”。",
+      "category": "Joy",
+      "generated_at": "2026-06-21T17:24:45.928298"
+    },
+    {
+      "english": "Don't say 'eat food', say 'eat'.",
+      "chinese": "别说“吃食物”，说“吃饭”。",
+      "category": "Joy",
+      "generated_at": "2026-06-21T17:24:45.928300"
+    },
+    {
+      "english": "Instead of 'very happy', use 'so happy'.",
+      "chinese": "与其“很开心”，不如“好开心”。",
+      "category": "Joy",
+      "generated_at": "2026-06-21T17:24:45.928301"
+    },
+    {
+      "english": "Not 'many people', try 'crowded'.",
+      "chinese": "不是“很多人”，试试“人多”。",
+      "category": "Joy",
+      "generated_at": "2026-06-21T17:24:45.928302"
     }
   ],
-  "last_updated": "2026-06-21T15:06:15.673454"
+  "last_updated": "2026-06-21T17:24:45.928304"
 }
