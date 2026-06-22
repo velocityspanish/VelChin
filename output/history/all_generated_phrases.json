@@ -8819,7 +8819,37 @@
       "chinese": "我听懂了，大胜利!",
       "category": "Confidence",
       "generated_at": "2026-06-22T21:27:42.167857"
+    },
+    {
+      "english": "One day, you'll look back, and smile.",
+      "chinese": "总有一天, 你会回望, 微笑。",
+      "category": "Hope",
+      "generated_at": "2026-06-22T23:29:45.531112"
+    },
+    {
+      "english": "Even in darkness, find light.",
+      "chinese": "即使在黑暗, 也要找光。",
+      "category": "Hope",
+      "generated_at": "2026-06-22T23:29:45.531123"
+    },
+    {
+      "english": "Your effort, is not wasted.",
+      "chinese": "你的努力, 没有白费。",
+      "category": "Hope",
+      "generated_at": "2026-06-22T23:29:45.531125"
+    },
+    {
+      "english": "Push forward, don't give up.",
+      "chinese": "向前冲, 别放弃。",
+      "category": "Hope",
+      "generated_at": "2026-06-22T23:29:45.531126"
+    },
+    {
+      "english": "This too, shall pass.",
+      "chinese": "这也会, 过去。",
+      "category": "Hope",
+      "generated_at": "2026-06-22T23:29:45.531127"
     }
   ],
-  "last_updated": "2026-06-22T21:27:42.167859"
+  "last_updated": "2026-06-22T23:29:45.531128"
 }
