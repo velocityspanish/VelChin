@@ -8729,7 +8729,37 @@
       "chinese": "放下昨天，拥抱今天。",
       "category": "Forgiveness",
       "generated_at": "2026-06-22T06:33:48.166609"
+    },
+    {
+      "english": "Not 'friend,' try 'buddy.'",
+      "chinese": "不是“朋友”，试试“伙伴”。",
+      "category": "Friendship",
+      "generated_at": "2026-06-22T17:25:00.867229"
+    },
+    {
+      "english": "He's my, best friend.",
+      "chinese": "他是我，最好的伙伴。",
+      "category": "Friendship",
+      "generated_at": "2026-06-22T17:25:00.867240"
+    },
+    {
+      "english": "We are, good friends.",
+      "chinese": "我们是，好朋友。",
+      "category": "Friendship",
+      "generated_at": "2026-06-22T17:25:00.867242"
+    },
+    {
+      "english": "You're a great friend, really.",
+      "chinese": "你真是，个好朋友。",
+      "category": "Friendship",
+      "generated_at": "2026-06-22T17:25:00.867243"
+    },
+    {
+      "english": "Let's be, good friends.",
+      "chinese": "我们做，好朋友吧。",
+      "category": "Friendship",
+      "generated_at": "2026-06-22T17:25:00.867244"
     }
   ],
-  "last_updated": "2026-06-22T06:33:48.166611"
+  "last_updated": "2026-06-22T17:25:00.867246"
 }
