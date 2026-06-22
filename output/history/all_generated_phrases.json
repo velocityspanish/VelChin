@@ -8759,7 +8759,37 @@
       "chinese": "我们做，好朋友吧。",
       "category": "Friendship",
       "generated_at": "2026-06-22T17:25:00.867244"
+    },
+    {
+      "english": "Speak slow, listen well.",
+      "chinese": "说慢点，听好点。",
+      "category": "Motivation",
+      "generated_at": "2026-06-22T19:24:26.364686"
+    },
+    {
+      "english": "New words, remember them.",
+      "chinese": "新词，要记住。",
+      "category": "Motivation",
+      "generated_at": "2026-06-22T19:24:26.364697"
+    },
+    {
+      "english": "Practice more, relax more.",
+      "chinese": "多练习，多放松。",
+      "category": "Motivation",
+      "generated_at": "2026-06-22T19:24:26.364699"
+    },
+    {
+      "english": "Try again, it's okay.",
+      "chinese": "再试试，没关系。",
+      "category": "Motivation",
+      "generated_at": "2026-06-22T19:24:26.364700"
+    },
+    {
+      "english": "Not just reading, try speaking.",
+      "chinese": "不只看，要说。",
+      "category": "Motivation",
+      "generated_at": "2026-06-22T19:24:26.364701"
     }
   ],
-  "last_updated": "2026-06-22T17:25:00.867246"
+  "last_updated": "2026-06-22T19:24:26.364702"
 }
