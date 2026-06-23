@@ -8879,7 +8879,37 @@
       "chinese": "早点睡，早点起，精神好！",
       "category": "Balance",
       "generated_at": "2026-06-23T05:07:31.360709"
+    },
+    {
+      "english": "One moment, fully present, here.",
+      "chinese": "当下此时，全神贯注。",
+      "category": "Mindfulness",
+      "generated_at": "2026-06-23T15:50:44.259986"
+    },
+    {
+      "english": "Mind quiet, like still water.",
+      "chinese": "心静如水。",
+      "category": "Mindfulness",
+      "generated_at": "2026-06-23T15:50:44.259996"
+    },
+    {
+      "english": "Let go, what you cannot change.",
+      "chinese": "放下，无法改变之事。",
+      "category": "Mindfulness",
+      "generated_at": "2026-06-23T15:50:44.259997"
+    },
+    {
+      "english": "Inner calm, starts now, today.",
+      "chinese": "内心平静，从此刻开始。",
+      "category": "Mindfulness",
+      "generated_at": "2026-06-23T15:50:44.259999"
+    },
+    {
+      "english": "Gratitude, a happy heart.",
+      "chinese": "感恩的心，快乐。",
+      "category": "Mindfulness",
+      "generated_at": "2026-06-23T15:50:44.260000"
     }
   ],
-  "last_updated": "2026-06-23T05:07:31.360711"
+  "last_updated": "2026-06-23T15:50:44.260001"
 }
