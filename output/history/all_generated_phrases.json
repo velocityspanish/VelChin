@@ -8999,7 +8999,37 @@
       "chinese": "对，你说，没错！",
       "category": "Growth",
       "generated_at": "2026-06-23T23:16:17.918559"
+    },
+    {
+      "english": "We are good friends, right?",
+      "chinese": "我们是好朋友，对吧？",
+      "category": "Friendship",
+      "generated_at": "2026-06-24T05:05:38.574902"
+    },
+    {
+      "english": "You are my best friend.",
+      "chinese": "你是我最好的朋友。",
+      "category": "Friendship",
+      "generated_at": "2026-06-24T05:05:38.574915"
+    },
+    {
+      "english": "Let's be friends, okay?",
+      "chinese": "我们做朋友吧，好吗？",
+      "category": "Friendship",
+      "generated_at": "2026-06-24T05:05:38.574917"
+    },
+    {
+      "english": "Thanks for being my friend.",
+      "chinese": "谢谢你做我的朋友。",
+      "category": "Friendship",
+      "generated_at": "2026-06-24T05:05:38.574918"
+    },
+    {
+      "english": "You always help me.",
+      "chinese": "你总是帮我。",
+      "category": "Friendship",
+      "generated_at": "2026-06-24T05:05:38.574919"
     }
   ],
-  "last_updated": "2026-06-23T23:16:17.918561"
+  "last_updated": "2026-06-24T05:05:38.574921"
 }
