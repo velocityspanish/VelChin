@@ -9029,7 +9029,37 @@
       "chinese": "你总是帮我。",
       "category": "Friendship",
       "generated_at": "2026-06-24T05:05:38.574919"
+    },
+    {
+      "english": "Not 'very good', try 'so good'!",
+      "chinese": "不是‘很好’，试试‘太棒了’！",
+      "category": "Joy",
+      "generated_at": "2026-06-24T15:29:12.021718"
+    },
+    {
+      "english": "Don't say 'I want', say 'I'd like'!",
+      "chinese": "别说‘我想要’，说‘我想要’！",
+      "category": "Joy",
+      "generated_at": "2026-06-24T15:29:12.021729"
+    },
+    {
+      "english": "Instead of 'very big', say 'huge'!",
+      "chinese": "‘很大’不如说‘巨大’！",
+      "category": "Joy",
+      "generated_at": "2026-06-24T15:29:12.021731"
+    },
+    {
+      "english": "Not 'I like this', but 'This is nice'!",
+      "chinese": "不是‘我喜欢这个’，而是‘这个不错’！",
+      "category": "Joy",
+      "generated_at": "2026-06-24T15:29:12.021731"
+    },
+    {
+      "english": "You mean 'really great', not 'too good'!",
+      "chinese": "你的意思是‘真棒’，不是‘太好了’！",
+      "category": "Joy",
+      "generated_at": "2026-06-24T15:29:12.021732"
     }
   ],
-  "last_updated": "2026-06-24T05:05:38.574921"
+  "last_updated": "2026-06-24T15:29:12.021734"
 }
