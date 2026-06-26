@@ -9299,7 +9299,37 @@
       "chinese": "好朋友，倾听，不评判。",
       "category": "Friendship",
       "generated_at": "2026-06-25T23:24:52.089253"
+    },
+    {
+      "english": "Keep going, you've got this.",
+      "chinese": "继续, 你可以的。",
+      "category": "Success",
+      "generated_at": "2026-06-26T05:13:57.834853"
+    },
+    {
+      "english": "Step by step, reach your goal.",
+      "chinese": "一步一步, 达到目标。",
+      "category": "Success",
+      "generated_at": "2026-06-26T05:13:57.834863"
+    },
+    {
+      "english": "Every effort, counts for something.",
+      "chinese": "每一次努力, 都算数。",
+      "category": "Success",
+      "generated_at": "2026-06-26T05:13:57.834865"
+    },
+    {
+      "english": "One day at a time, you'll see.",
+      "chinese": "一天一天, 你会看到。",
+      "category": "Success",
+      "generated_at": "2026-06-26T05:13:57.834866"
+    },
+    {
+      "english": "Learn new things, grow daily.",
+      "chinese": "学新东西, 天天进步。",
+      "category": "Success",
+      "generated_at": "2026-06-26T05:13:57.834867"
     }
   ],
-  "last_updated": "2026-06-25T23:24:52.089255"
+  "last_updated": "2026-06-26T05:13:57.834869"
 }
