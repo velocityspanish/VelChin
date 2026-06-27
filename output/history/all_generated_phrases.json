@@ -9539,7 +9539,37 @@
       "chinese": "纯粹的快乐, 真的。",
       "category": "Joy",
       "generated_at": "2026-06-27T17:04:37.890052"
+    },
+    {
+      "english": "Almost there, keep pushing.",
+      "chinese": "快到了, 加油。",
+      "category": "Success",
+      "generated_at": "2026-06-27T20:02:25.341908"
+    },
+    {
+      "english": "That's progress, fantastic!",
+      "chinese": "这是进步, 太棒了！",
+      "category": "Success",
+      "generated_at": "2026-06-27T20:02:25.341918"
+    },
+    {
+      "english": "Keep that momentum, yes.",
+      "chinese": "保持这个势头, 对。",
+      "category": "Success",
+      "generated_at": "2026-06-27T20:02:25.341920"
+    },
+    {
+      "english": "Success is coming, wait.",
+      "chinese": "成功在望, 等着。",
+      "category": "Success",
+      "generated_at": "2026-06-27T20:02:25.341921"
+    },
+    {
+      "english": "This is working, good.",
+      "chinese": "这奏效了, 好。",
+      "category": "Success",
+      "generated_at": "2026-06-27T20:02:25.341922"
     }
   ],
-  "last_updated": "2026-06-27T17:04:37.890054"
+  "last_updated": "2026-06-27T20:02:25.341924"
 }
