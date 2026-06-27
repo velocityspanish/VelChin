@@ -9569,7 +9569,37 @@
       "chinese": "这奏效了, 好。",
       "category": "Success",
       "generated_at": "2026-06-27T20:02:25.341922"
+    },
+    {
+      "english": "Try once, then again.",
+      "chinese": "试一次，再来。",
+      "category": "Confidence",
+      "generated_at": "2026-06-27T23:10:26.521176"
+    },
+    {
+      "english": "Keep going, don't stop.",
+      "chinese": "继续，不停。",
+      "category": "Confidence",
+      "generated_at": "2026-06-27T23:10:26.521186"
+    },
+    {
+      "english": "You're getting it, yes.",
+      "chinese": "你懂了，对。",
+      "category": "Confidence",
+      "generated_at": "2026-06-27T23:10:26.521187"
+    },
+    {
+      "english": "Good job, really good.",
+      "chinese": "做得好，真棒。",
+      "category": "Confidence",
+      "generated_at": "2026-06-27T23:10:26.521189"
+    },
+    {
+      "english": "Never give up, try.",
+      "chinese": "不放弃，去试。",
+      "category": "Confidence",
+      "generated_at": "2026-06-27T23:10:26.521190"
     }
   ],
-  "last_updated": "2026-06-27T20:02:25.341924"
+  "last_updated": "2026-06-27T23:10:26.521192"
 }
