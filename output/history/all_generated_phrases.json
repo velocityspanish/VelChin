@@ -9779,7 +9779,37 @@
       "chinese": "随波逐流，不抵抗。",
       "category": "Balance",
       "generated_at": "2026-06-29T05:55:14.757808"
+    },
+    {
+      "english": "Let's study, together, okay?",
+      "chinese": "我们一起学，好不好？",
+      "category": "Success",
+      "generated_at": "2026-06-29T16:33:16.648950"
+    },
+    {
+      "english": "You speak it, so smoothly.",
+      "chinese": "你说得，好流畅。",
+      "category": "Success",
+      "generated_at": "2026-06-29T16:33:16.648961"
+    },
+    {
+      "english": "You're learning, so fast, wow.",
+      "chinese": "你学得，好快，哇。",
+      "category": "Success",
+      "generated_at": "2026-06-29T16:33:16.648963"
+    },
+    {
+      "english": "That accent, is charming.",
+      "chinese": "那个口音，真迷人。",
+      "category": "Success",
+      "generated_at": "2026-06-29T16:33:16.648964"
+    },
+    {
+      "english": "Can you teach me, more?",
+      "chinese": "能教我，多一点吗？",
+      "category": "Success",
+      "generated_at": "2026-06-29T16:33:16.648965"
     }
   ],
-  "last_updated": "2026-06-29T05:55:14.757810"
+  "last_updated": "2026-06-29T16:33:16.648967"
 }
