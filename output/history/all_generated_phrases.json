@@ -9929,7 +9929,37 @@
       "chinese": "别放弃, 快到了。",
       "category": "Hope",
       "generated_at": "2026-06-30T05:09:54.511134"
+    },
+    {
+      "english": "Listen hard, speak slow, learn fast.",
+      "chinese": "多听, 少说, 快学。",
+      "category": "Wisdom",
+      "generated_at": "2026-06-30T15:22:44.365706"
+    },
+    {
+      "english": "One character a day, builds a language.",
+      "chinese": "一天一字, 语言成。",
+      "category": "Wisdom",
+      "generated_at": "2026-06-30T15:22:44.365717"
+    },
+    {
+      "english": "Practice makes perfect, no exceptions.",
+      "chinese": "熟能生巧, 别例外。",
+      "category": "Wisdom",
+      "generated_at": "2026-06-30T15:22:44.365718"
+    },
+    {
+      "english": "Don't fear, try again.",
+      "chinese": "别怕, 再试一次。",
+      "category": "Wisdom",
+      "generated_at": "2026-06-30T15:22:44.365720"
+    },
+    {
+      "english": "Each mistake, a lesson learned.",
+      "chinese": "每次错误, 都是课。",
+      "category": "Wisdom",
+      "generated_at": "2026-06-30T15:22:44.365721"
     }
   ],
-  "last_updated": "2026-06-30T05:09:54.511136"
+  "last_updated": "2026-06-30T15:22:44.365722"
 }
