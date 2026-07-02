@@ -10259,7 +10259,37 @@
       "chinese": "你努力，是钥匙。",
       "category": "Confidence",
       "generated_at": "2026-07-02T20:13:34.541290"
+    },
+    {
+      "english": "Good friends, stick together, always.",
+      "chinese": "好朋友，一起走，不分开。",
+      "category": "Friendship",
+      "generated_at": "2026-07-02T23:18:47.325620"
+    },
+    {
+      "english": "You get me, like no one else.",
+      "chinese": "你懂我，别人不懂。",
+      "category": "Friendship",
+      "generated_at": "2026-07-02T23:18:47.325630"
+    },
+    {
+      "english": "Sharing secrets, with you, feels safe.",
+      "chinese": "说秘密，只对你，很放心。",
+      "category": "Friendship",
+      "generated_at": "2026-07-02T23:18:47.325632"
+    },
+    {
+      "english": "Laughing together, is the best.",
+      "chinese": "一起笑，最开心。",
+      "category": "Friendship",
+      "generated_at": "2026-07-02T23:18:47.325633"
+    },
+    {
+      "english": "You're my partner, in crime.",
+      "chinese": "你是我的，最佳损友。",
+      "category": "Friendship",
+      "generated_at": "2026-07-02T23:18:47.325635"
     }
   ],
-  "last_updated": "2026-07-02T20:13:34.541292"
+  "last_updated": "2026-07-02T23:18:47.325636"
 }
