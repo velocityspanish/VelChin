@@ -10439,7 +10439,37 @@
       "chinese": "牵手，同行。快乐。",
       "category": "Love",
       "generated_at": "2026-07-03T23:13:22.560178"
+    },
+    {
+      "english": "Speak out, don't be shy.",
+      "chinese": "大胆说, 别害羞。",
+      "category": "Success",
+      "generated_at": "2026-07-04T04:39:32.567056"
+    },
+    {
+      "english": "Listen closely, to understand.",
+      "chinese": "认真听, 才明白。",
+      "category": "Success",
+      "generated_at": "2026-07-04T04:39:32.567068"
+    },
+    {
+      "english": "Mistakes are fine, learn from them.",
+      "chinese": "犯错没事, 学习它。",
+      "category": "Success",
+      "generated_at": "2026-07-04T04:39:32.567069"
+    },
+    {
+      "english": "Be patient, it takes time.",
+      "chinese": "耐心点, 需要时。",
+      "category": "Success",
+      "generated_at": "2026-07-04T04:39:32.567070"
+    },
+    {
+      "english": "Immerse yourself, in the language.",
+      "chinese": "沉浸式, 学语言。",
+      "category": "Success",
+      "generated_at": "2026-07-04T04:39:32.567071"
     }
   ],
-  "last_updated": "2026-07-03T23:13:22.560180"
+  "last_updated": "2026-07-04T04:39:32.567073"
 }
