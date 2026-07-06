@@ -10769,7 +10769,37 @@
       "chinese": "自然的力量, 挡不住。",
       "category": "Strength",
       "generated_at": "2026-07-06T05:17:22.535084"
+    },
+    {
+      "english": "Don't just think, speak! Your turn.",
+      "chinese": "别光想，说出来！轮到你了。",
+      "category": "Inspiration",
+      "generated_at": "2026-07-06T16:13:43.395138"
+    },
+    {
+      "english": "You understand? Nod your head.",
+      "chinese": "你懂了吗？点点头。",
+      "category": "Inspiration",
+      "generated_at": "2026-07-06T16:13:43.395151"
+    },
+    {
+      "english": "Listen carefully, repeat after me.",
+      "chinese": "仔细听，跟我重复。",
+      "category": "Inspiration",
+      "generated_at": "2026-07-06T16:13:43.395153"
+    },
+    {
+      "english": "Don't be shy, give it a try.",
+      "chinese": "别害羞，试一试。",
+      "category": "Inspiration",
+      "generated_at": "2026-07-06T16:13:43.395154"
+    },
+    {
+      "english": "Practice makes perfect. Daily habit.",
+      "chinese": "熟能生巧。每天练习。",
+      "category": "Inspiration",
+      "generated_at": "2026-07-06T16:13:43.395156"
     }
   ],
-  "last_updated": "2026-07-06T05:17:22.535086"
+  "last_updated": "2026-07-06T16:13:43.395158"
 }
