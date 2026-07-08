@@ -11039,7 +11039,37 @@
       "chinese": "你很厉害, 我知道。",
       "category": "Confidence",
       "generated_at": "2026-07-08T15:08:10.639292"
+    },
+    {
+      "english": "Mind and body, align.",
+      "chinese": "身心，合一。",
+      "category": "Balance",
+      "generated_at": "2026-07-08T17:24:26.839078"
+    },
+    {
+      "english": "Rest well, recharge.",
+      "chinese": "好好休息，再充电。",
+      "category": "Balance",
+      "generated_at": "2026-07-08T17:24:26.839085"
+    },
+    {
+      "english": "Slow down, enjoy.",
+      "chinese": "放慢脚步，享受。",
+      "category": "Balance",
+      "generated_at": "2026-07-08T17:24:26.839087"
+    },
+    {
+      "english": "Give and take, fair.",
+      "chinese": "给予和索取，公平。",
+      "category": "Balance",
+      "generated_at": "2026-07-08T17:24:26.839088"
+    },
+    {
+      "english": "Steady, then strong.",
+      "chinese": "稳住，然后变强。",
+      "category": "Balance",
+      "generated_at": "2026-07-08T17:24:26.839089"
     }
   ],
-  "last_updated": "2026-07-08T15:08:10.639294"
+  "last_updated": "2026-07-08T17:24:26.839094"
 }
