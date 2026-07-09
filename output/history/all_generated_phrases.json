@@ -11129,7 +11129,37 @@
       "chinese": "你说话，很清楚。",
       "category": "Gratitude",
       "generated_at": "2026-07-09T04:58:39.589013"
+    },
+    {
+      "english": "Listen often, speak more.",
+      "chinese": "多听, 多说。",
+      "category": "Success",
+      "generated_at": "2026-07-09T15:51:22.883662"
+    },
+    {
+      "english": "Every day, learn something.",
+      "chinese": "每天, 学一点。",
+      "category": "Success",
+      "generated_at": "2026-07-09T15:51:22.883671"
+    },
+    {
+      "english": "Repeat words, remember.",
+      "chinese": "重复词语, 记住。",
+      "category": "Success",
+      "generated_at": "2026-07-09T15:51:22.883673"
+    },
+    {
+      "english": "Use it, or lose it.",
+      "chinese": "用了, 不会忘。",
+      "category": "Success",
+      "generated_at": "2026-07-09T15:51:22.883674"
+    },
+    {
+      "english": "Connect dots, see patterns.",
+      "chinese": "连点成线, 看规律。",
+      "category": "Success",
+      "generated_at": "2026-07-09T15:51:22.883675"
     }
   ],
-  "last_updated": "2026-07-09T04:58:39.589015"
+  "last_updated": "2026-07-09T15:51:22.883677"
 }
