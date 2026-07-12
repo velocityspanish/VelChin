@@ -11579,7 +11579,37 @@
       "chinese": "我们一起长大，慢慢。",
       "category": "Friendship",
       "generated_at": "2026-07-12T04:31:36.121010"
+    },
+    {
+      "english": "Eat, eat, eat, ah, so happy!",
+      "chinese": "吃吃吃, 啊, 好开心！",
+      "category": "Joy",
+      "generated_at": "2026-07-12T14:22:27.082713"
+    },
+    {
+      "english": "Laugh out loud, my friend, ha ha!",
+      "chinese": "大声笑, 我的朋友, 哈哈！",
+      "category": "Joy",
+      "generated_at": "2026-07-12T14:22:27.082725"
+    },
+    {
+      "english": "Found it! Yes! So excited!",
+      "chinese": "找到了！耶！太激动了！",
+      "category": "Joy",
+      "generated_at": "2026-07-12T14:22:27.082726"
+    },
+    {
+      "english": "Wow, so beautiful, my eyes are happy!",
+      "chinese": "哇, 好美啊, 我眼睛开心！",
+      "category": "Joy",
+      "generated_at": "2026-07-12T14:22:27.082727"
+    },
+    {
+      "english": "This is too funny, I can't stop!",
+      "chinese": "这个太搞笑了, 停不下来！",
+      "category": "Joy",
+      "generated_at": "2026-07-12T14:22:27.082728"
     }
   ],
-  "last_updated": "2026-07-12T04:31:36.121012"
+  "last_updated": "2026-07-12T14:22:27.082730"
 }
