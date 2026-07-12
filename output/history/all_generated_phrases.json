@@ -11609,7 +11609,37 @@
       "chinese": "这个太搞笑了, 停不下来！",
       "category": "Joy",
       "generated_at": "2026-07-12T14:22:27.082728"
+    },
+    {
+      "english": "One word, changes everything.",
+      "chinese": "一个词，改变一切。",
+      "category": "Purpose",
+      "generated_at": "2026-07-12T16:53:51.207004"
+    },
+    {
+      "english": "Say 'hello', open a world.",
+      "chinese": "说“你好”，打开世界。",
+      "category": "Purpose",
+      "generated_at": "2026-07-12T16:53:51.207015"
+    },
+    {
+      "english": "Your voice, is your passport.",
+      "chinese": "你的声音，是你的护照。",
+      "category": "Purpose",
+      "generated_at": "2026-07-12T16:53:51.207017"
+    },
+    {
+      "english": "Listen to the rhythm, find the flow.",
+      "chinese": "听节奏，找语感。",
+      "category": "Purpose",
+      "generated_at": "2026-07-12T16:53:51.207018"
+    },
+    {
+      "english": "Even a whisper, can be heard.",
+      "chinese": "哪怕低语，也能被听见。",
+      "category": "Purpose",
+      "generated_at": "2026-07-12T16:53:51.207019"
     }
   ],
-  "last_updated": "2026-07-12T14:22:27.082730"
+  "last_updated": "2026-07-12T16:53:51.207021"
 }
