@@ -11789,7 +11789,37 @@
       "chinese": "你真是块宝，真的。",
       "category": "Kindness",
       "generated_at": "2026-07-13T20:05:18.689757"
+    },
+    {
+      "english": "Thank you, so much!",
+      "chinese": "非常感谢, 谢谢！",
+      "category": "Gratitude",
+      "generated_at": "2026-07-13T23:02:35.085797"
+    },
+    {
+      "english": "That was really helpful, thanks.",
+      "chinese": "这, 真的有帮到忙。",
+      "category": "Gratitude",
+      "generated_at": "2026-07-13T23:02:35.085808"
+    },
+    {
+      "english": "Couldn't have done it, without you.",
+      "chinese": "没你, 真的不行。",
+      "category": "Gratitude",
+      "generated_at": "2026-07-13T23:02:35.085810"
+    },
+    {
+      "english": "This means a lot, really.",
+      "chinese": "这, 意义重大。",
+      "category": "Gratitude",
+      "generated_at": "2026-07-13T23:02:35.085811"
+    },
+    {
+      "english": "You're too kind, thank you.",
+      "chinese": "你太好了, 谢谢。",
+      "category": "Gratitude",
+      "generated_at": "2026-07-13T23:02:35.085812"
     }
   ],
-  "last_updated": "2026-07-13T20:05:18.689758"
+  "last_updated": "2026-07-13T23:02:35.085814"
 }
