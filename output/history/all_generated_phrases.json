@@ -11819,7 +11819,37 @@
       "chinese": "你太好了, 谢谢。",
       "category": "Gratitude",
       "generated_at": "2026-07-13T23:02:35.085812"
+    },
+    {
+      "english": "Slow down, breathe deep, you got this.",
+      "chinese": "慢一点，深呼吸，你能行。",
+      "category": "Patience",
+      "generated_at": "2026-07-14T04:07:43.694530"
+    },
+    {
+      "english": "It takes time, don't rush it.",
+      "chinese": "需要时间，别着急。",
+      "category": "Patience",
+      "generated_at": "2026-07-14T04:07:43.694541"
+    },
+    {
+      "english": "Rome wasn't built, in a day.",
+      "chinese": "罗马不是，一天建成的。",
+      "category": "Patience",
+      "generated_at": "2026-07-14T04:07:43.694542"
+    },
+    {
+      "english": "Just keep trying, bit by bit.",
+      "chinese": "继续努力，一点一点。",
+      "category": "Patience",
+      "generated_at": "2026-07-14T04:07:43.694543"
+    },
+    {
+      "english": "Good things come, to those who wait.",
+      "chinese": "好东西，值得等待。",
+      "category": "Patience",
+      "generated_at": "2026-07-14T04:07:43.694544"
     }
   ],
-  "last_updated": "2026-07-13T23:02:35.085814"
+  "last_updated": "2026-07-14T04:07:43.694545"
 }
