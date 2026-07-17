@@ -12149,7 +12149,37 @@
       "chinese": "每一个新短语，都打开一扇门。",
       "category": "Confidence",
       "generated_at": "2026-07-17T14:24:16.590826"
+    },
+    {
+      "english": "Thanks! Not just 'xie xie'.",
+      "chinese": "谢谢！不只是“谢谢”.",
+      "category": "Gratitude",
+      "generated_at": "2026-07-17T19:55:57.090286"
+    },
+    {
+      "english": "You're welcome, really.",
+      "chinese": "不客气，真的。",
+      "category": "Gratitude",
+      "generated_at": "2026-07-17T19:55:57.090301"
+    },
+    {
+      "english": "My pleasure, honestly.",
+      "chinese": "是我的荣幸，说真的。",
+      "category": "Gratitude",
+      "generated_at": "2026-07-17T19:55:57.090302"
+    },
+    {
+      "english": "No need, really.",
+      "chinese": "不用谢，真的。",
+      "category": "Gratitude",
+      "generated_at": "2026-07-17T19:55:57.090303"
+    },
+    {
+      "english": "Glad I could help.",
+      "chinese": "很高兴能帮到你。",
+      "category": "Gratitude",
+      "generated_at": "2026-07-17T19:55:57.090304"
     }
   ],
-  "last_updated": "2026-07-17T14:24:16.590828"
+  "last_updated": "2026-07-17T19:55:57.090306"
 }
