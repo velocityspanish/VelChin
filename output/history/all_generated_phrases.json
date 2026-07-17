@@ -12179,7 +12179,37 @@
       "chinese": "很高兴能帮到你。",
       "category": "Gratitude",
       "generated_at": "2026-07-17T19:55:57.090304"
+    },
+    {
+      "english": "It's all good. Forget it.",
+      "chinese": "没关系，都过去了。",
+      "category": "Forgiveness",
+      "generated_at": "2026-07-17T22:56:07.499284"
+    },
+    {
+      "english": "Water under the bridge. Forgive.",
+      "chinese": "既往不咎，原谅吧。",
+      "category": "Forgiveness",
+      "generated_at": "2026-07-17T22:56:07.499292"
+    },
+    {
+      "english": "My apologies. Let's reset.",
+      "chinese": "我道歉。重新开始。",
+      "category": "Forgiveness",
+      "generated_at": "2026-07-17T22:56:07.499294"
+    },
+    {
+      "english": "Shake it off. All is well.",
+      "chinese": "忘掉它，一切都好。",
+      "category": "Forgiveness",
+      "generated_at": "2026-07-17T22:56:07.499295"
+    },
+    {
+      "english": "Can we just laugh? Let it go.",
+      "chinese": "我们笑一笑？算了吧。",
+      "category": "Forgiveness",
+      "generated_at": "2026-07-17T22:56:07.499296"
     }
   ],
-  "last_updated": "2026-07-17T19:55:57.090306"
+  "last_updated": "2026-07-17T22:56:07.499298"
 }
