@@ -12299,7 +12299,37 @@
       "chinese": "我非常想你。",
       "category": "Love",
       "generated_at": "2026-07-18T16:51:41.523034"
+    },
+    {
+      "english": "Glad, we met.",
+      "chinese": "很高兴，我们相遇。",
+      "category": "Gratitude",
+      "generated_at": "2026-07-18T19:57:08.138223"
+    },
+    {
+      "english": "You're, a great catch.",
+      "chinese": "你真是，个好对象。",
+      "category": "Gratitude",
+      "generated_at": "2026-07-18T19:57:08.138236"
+    },
+    {
+      "english": "I appreciate, you so much.",
+      "chinese": "我非常，感激你。",
+      "category": "Gratitude",
+      "generated_at": "2026-07-18T19:57:08.138237"
+    },
+    {
+      "english": "This is, thanks to you.",
+      "chinese": "这是，因为你。",
+      "category": "Gratitude",
+      "generated_at": "2026-07-18T19:57:08.138238"
+    },
+    {
+      "english": "You're, a gem.",
+      "chinese": "你真是，块宝玉。",
+      "category": "Gratitude",
+      "generated_at": "2026-07-18T19:57:08.138239"
     }
   ],
-  "last_updated": "2026-07-18T16:51:41.523036"
+  "last_updated": "2026-07-18T19:57:08.138241"
 }
