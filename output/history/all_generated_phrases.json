@@ -12389,7 +12389,37 @@
       "chinese": "打开心扉，天地宽广。",
       "category": "Success",
       "generated_at": "2026-07-19T04:24:37.470058"
+    },
+    {
+      "english": "Don't rush, it's okay.",
+      "chinese": "别着急, 没关系。",
+      "category": "Patience",
+      "generated_at": "2026-07-19T14:19:59.857680"
+    },
+    {
+      "english": "Take your time, understand.",
+      "chinese": "慢慢来, 明白。",
+      "category": "Patience",
+      "generated_at": "2026-07-19T14:19:59.857690"
+    },
+    {
+      "english": "Wait a moment, listen first.",
+      "chinese": "等一下, 先听。",
+      "category": "Patience",
+      "generated_at": "2026-07-19T14:19:59.857691"
+    },
+    {
+      "english": "Give it some time, friend.",
+      "chinese": "给点时间, 朋友。",
+      "category": "Patience",
+      "generated_at": "2026-07-19T14:19:59.857692"
+    },
+    {
+      "english": "No hurry, we can finish.",
+      "chinese": "不急, 我们能完成。",
+      "category": "Patience",
+      "generated_at": "2026-07-19T14:19:59.857694"
     }
   ],
-  "last_updated": "2026-07-19T04:24:37.470060"
+  "last_updated": "2026-07-19T14:19:59.857695"
 }
