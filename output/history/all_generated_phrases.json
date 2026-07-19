@@ -12419,7 +12419,37 @@
       "chinese": "不急, 我们能完成。",
       "category": "Patience",
       "generated_at": "2026-07-19T14:19:59.857694"
+    },
+    {
+      "english": "Be brave, try now.",
+      "chinese": "勇敢点, 现在就试。",
+      "category": "Courage",
+      "generated_at": "2026-07-19T16:52:11.737438"
+    },
+    {
+      "english": "New adventure, start here.",
+      "chinese": "新冒险, 从这里开始。",
+      "category": "Courage",
+      "generated_at": "2026-07-19T16:52:11.737448"
+    },
+    {
+      "english": "Take a chance, win big.",
+      "chinese": "冒险一下, 大赢家。",
+      "category": "Courage",
+      "generated_at": "2026-07-19T16:52:11.737449"
+    },
+    {
+      "english": "Push forward, no fear.",
+      "chinese": "向前冲, 不害怕。",
+      "category": "Courage",
+      "generated_at": "2026-07-19T16:52:11.737451"
+    },
+    {
+      "english": "Dare to fail, then fly.",
+      "chinese": "敢失败, 再飞翔。",
+      "category": "Courage",
+      "generated_at": "2026-07-19T16:52:11.737452"
     }
   ],
-  "last_updated": "2026-07-19T14:19:59.857695"
+  "last_updated": "2026-07-19T16:52:11.737454"
 }
