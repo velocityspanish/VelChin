@@ -12719,7 +12719,37 @@
       "chinese": "我们的情谊，永远牢。",
       "category": "Friendship",
       "generated_at": "2026-07-21T20:11:02.031966"
+    },
+    {
+      "english": "Little by little, a bit more.",
+      "chinese": "一点一滴, 进步多。",
+      "category": "Success",
+      "generated_at": "2026-07-22T04:21:23.176950"
+    },
+    {
+      "english": "Practice makes it easy.",
+      "chinese": "练习, 变容易。",
+      "category": "Success",
+      "generated_at": "2026-07-22T04:21:23.176961"
+    },
+    {
+      "english": "Don't be shy, try!",
+      "chinese": "别害羞, 试试!",
+      "category": "Success",
+      "generated_at": "2026-07-22T04:21:23.176963"
+    },
+    {
+      "english": "Every day, one new word.",
+      "chinese": "每天, 一个新词。",
+      "category": "Success",
+      "generated_at": "2026-07-22T04:21:23.176964"
+    },
+    {
+      "english": "Sound it out, slowly.",
+      "chinese": "慢慢读, 慢慢说。",
+      "category": "Success",
+      "generated_at": "2026-07-22T04:21:23.176966"
     }
   ],
-  "last_updated": "2026-07-21T20:11:02.031968"
+  "last_updated": "2026-07-22T04:21:23.176968"
 }
