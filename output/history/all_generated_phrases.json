@@ -12989,7 +12989,37 @@
       "chinese": "非常感谢，朋友。",
       "category": "Gratitude",
       "generated_at": "2026-07-23T13:29:34.310081"
+    },
+    {
+      "english": "Try it, you might like it.",
+      "chinese": "试试看，你会喜欢的。",
+      "category": "Purpose",
+      "generated_at": "2026-07-23T13:35:54.609833"
+    },
+    {
+      "english": "Connect, with others.",
+      "chinese": "连接，与他人。",
+      "category": "Purpose",
+      "generated_at": "2026-07-23T13:35:54.609840"
+    },
+    {
+      "english": "Understand, deeper meanings.",
+      "chinese": "理解，更深层。",
+      "category": "Purpose",
+      "generated_at": "2026-07-23T13:35:54.609842"
+    },
+    {
+      "english": "Ask anything, no shame.",
+      "chinese": "问所有，不害羞。",
+      "category": "Purpose",
+      "generated_at": "2026-07-23T13:35:54.609843"
+    },
+    {
+      "english": "Share your thoughts, openly.",
+      "chinese": "分享想法，大方些。",
+      "category": "Purpose",
+      "generated_at": "2026-07-23T13:35:54.609844"
     }
   ],
-  "last_updated": "2026-07-23T13:29:34.310083"
+  "last_updated": "2026-07-23T13:35:54.609846"
 }
