@@ -109,7 +109,7 @@ LANGUAGE_MAP = {
     "mar": "Marathi", "marathi": "Marathi",
     "telu": "Telugu",
     "mal": "Malayalam", "malayalam": "Malayalam",
-    "chi": "Chinese", "chinese": "Chinese", "zh": "Chinese",
+    "chi": "Chinese", "chin": "Chinese", "chinese": "Chinese", "zh": "Chinese",
     "ukr": "Ukrainian", "ukrainian": "Ukrainian",
     "nor": "Norwegian", "norwegian": "Norwegian",
     "gre": "Greek", "greek": "Greek",
