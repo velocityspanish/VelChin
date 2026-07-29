@@ -13799,7 +13799,37 @@
       "chinese": "小声重复, 像雨一样, 稳稳来",
       "category": "Patience",
       "generated_at": "2026-07-29T15:04:15.616011"
+    },
+    {
+      "english": "Say “I want”, not “I have”, okay?",
+      "chinese": "说“我想要”, 别说“我有”, 好吗？",
+      "category": "Strength",
+      "generated_at": "2026-07-29T17:09:50.901384"
+    },
+    {
+      "english": "Don’t rush, add “ma”, ask the question.",
+      "chinese": "别着急, 加“吗”, 这是问句。",
+      "category": "Strength",
+      "generated_at": "2026-07-29T17:09:50.901393"
+    },
+    {
+      "english": "Use “在”, not “to”, I’m here.",
+      "chinese": "用“在”, 别用“去”, 我在这儿。",
+      "category": "Strength",
+      "generated_at": "2026-07-29T17:09:50.901395"
+    },
+    {
+      "english": "When you want food, say “吃”, not “喝”.",
+      "chinese": "要吃东西, 就说“吃”, 别说“喝”。",
+      "category": "Strength",
+      "generated_at": "2026-07-29T17:09:50.901396"
+    },
+    {
+      "english": "“Thanks” is “谢谢”, not “thank you” only.",
+      "chinese": "“谢谢”是“谢谢”, 别只说“thank you”。",
+      "category": "Strength",
+      "generated_at": "2026-07-29T17:09:50.901397"
     }
   ],
-  "last_updated": "2026-07-29T15:04:15.616013"
+  "last_updated": "2026-07-29T17:09:50.901399"
 }
