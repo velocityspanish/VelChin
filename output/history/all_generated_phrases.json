@@ -13919,7 +13919,37 @@
       "chinese": "问“哪里”, 就用“哪儿”,",
       "category": "Strength",
       "generated_at": "2026-07-30T04:10:40.053640"
+    },
+    {
+      "english": "Sorry comes first, say 对不起, then forgive.",
+      "chinese": "先说对不起, 再原谅。",
+      "category": "Forgiveness",
+      "generated_at": "2026-07-30T15:00:51.856239"
+    },
+    {
+      "english": "Don’t blame, say 没事, it’s okay.",
+      "chinese": "别怪人, 说没事, 就好。",
+      "category": "Forgiveness",
+      "generated_at": "2026-07-30T15:00:51.856249"
+    },
+    {
+      "english": "You say 我错了, then we move on.",
+      "chinese": "你说我错了, 然后继续。",
+      "category": "Forgiveness",
+      "generated_at": "2026-07-30T15:00:51.856251"
+    },
+    {
+      "english": "Don’t say “no”, say 没关系, we’re fine.",
+      "chinese": "别说不, 说没关系, 我们没事。",
+      "category": "Forgiveness",
+      "generated_at": "2026-07-30T15:00:51.856252"
+    },
+    {
+      "english": "Breathe, say 算了, let it go.",
+      "chinese": "先慢点, 说算了, 就放下。",
+      "category": "Forgiveness",
+      "generated_at": "2026-07-30T15:00:51.856254"
     }
   ],
-  "last_updated": "2026-07-30T04:10:40.053642"
+  "last_updated": "2026-07-30T15:00:51.856255"
 }
