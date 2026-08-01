@@ -14219,7 +14219,37 @@
       "chinese": "顺序弄乱了, 换回来, 再试",
       "category": "Success",
       "generated_at": "2026-08-01T04:24:45.486704"
+    },
+    {
+      "english": "Meet for tea, chat slow, share stories",
+      "chinese": "喝杯茶见面，慢慢聊，分享故事",
+      "category": "Friendship",
+      "generated_at": "2026-08-01T14:21:22.676470"
+    },
+    {
+      "english": "Send a voice note, keep it short, warm",
+      "chinese": "发语音消息，短一点，温暖一点",
+      "category": "Friendship",
+      "generated_at": "2026-08-01T14:21:22.676479"
+    },
+    {
+      "english": "Call first, check in, then start the plan",
+      "chinese": "先打个电话，问问近况，再开始计划",
+      "category": "Friendship",
+      "generated_at": "2026-08-01T14:21:22.676480"
+    },
+    {
+      "english": "Walk together, point around, practice new words",
+      "chinese": "一起散步，指一指，练新词",
+      "category": "Friendship",
+      "generated_at": "2026-08-01T14:21:22.676481"
+    },
+    {
+      "english": "Share a snack, say thank you, repeat",
+      "chinese": "分点零食，说谢谢，再来一次",
+      "category": "Friendship",
+      "generated_at": "2026-08-01T14:21:22.676482"
     }
   ],
-  "last_updated": "2026-08-01T04:24:45.486706"
+  "last_updated": "2026-08-01T14:21:22.676485"
 }
