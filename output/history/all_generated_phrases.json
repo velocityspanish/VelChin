@@ -14369,7 +14369,37 @@
       "chinese": "今天小步，过会儿能聊天，信自己。",
       "category": "Positive Life",
       "generated_at": "2026-08-02T04:27:08.371043"
+    },
+    {
+      "english": "Don’t quit, make it smaller, try again",
+      "chinese": "别放弃，把它变小，再试一次",
+      "category": "Perseverance",
+      "generated_at": "2026-08-02T14:23:24.942354"
+    },
+    {
+      "english": "You guessed, that’s okay, correct it, continue",
+      "chinese": "你猜了也没事，改一改，继续",
+      "category": "Perseverance",
+      "generated_at": "2026-08-02T14:23:24.942368"
+    },
+    {
+      "english": "Repeat after me, pause, then speak your line",
+      "chinese": "跟我读一遍，停一下，再说你的句子",
+      "category": "Perseverance",
+      "generated_at": "2026-08-02T14:23:24.942369"
+    },
+    {
+      "english": "Wrong tone happens, slow down, then fix",
+      "chinese": "错了声调也正常，慢一点，再改",
+      "category": "Perseverance",
+      "generated_at": "2026-08-02T14:23:24.942370"
+    },
+    {
+      "english": "Write one word, check it, don’t stop",
+      "chinese": "写一个字，看看对不对，别停",
+      "category": "Perseverance",
+      "generated_at": "2026-08-02T14:23:24.942371"
     }
   ],
-  "last_updated": "2026-08-02T04:27:08.371045"
+  "last_updated": "2026-08-02T14:23:24.942373"
 }
