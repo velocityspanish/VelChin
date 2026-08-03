@@ -14609,7 +14609,37 @@
       "chinese": "享受发音, 轻声重复, 快乐学习",
       "category": "Happiness",
       "generated_at": "2026-08-03T20:20:18.147650"
+    },
+    {
+      "english": "Thank you, really, I feel welcomed here.",
+      "chinese": "谢谢你,真的,我觉得很欢迎。",
+      "category": "Gratitude",
+      "generated_at": "2026-08-03T23:11:37.237927"
+    },
+    {
+      "english": "Grateful today, 谢谢老师, you helped me.",
+      "chinese": "今天很感激,谢谢老师,你帮了我。",
+      "category": "Gratitude",
+      "generated_at": "2026-08-03T23:11:37.237938"
+    },
+    {
+      "english": "I appreciate you, 谢谢, thanks for waiting.",
+      "chinese": "我很感谢你,谢谢,谢谢你等我。",
+      "category": "Gratitude",
+      "generated_at": "2026-08-03T23:11:37.237939"
+    },
+    {
+      "english": "Thanks for the snack, I’m happy, really.",
+      "chinese": "谢谢你的点心,我很开心,真的。",
+      "category": "Gratitude",
+      "generated_at": "2026-08-03T23:11:37.237941"
+    },
+    {
+      "english": "Thank you for correcting me, I grow.",
+      "chinese": "谢谢你纠正我,我会进步。",
+      "category": "Gratitude",
+      "generated_at": "2026-08-03T23:11:37.237942"
     }
   ],
-  "last_updated": "2026-08-03T20:20:18.147652"
+  "last_updated": "2026-08-03T23:11:37.237944"
 }
