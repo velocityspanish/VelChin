@@ -14639,7 +14639,37 @@
       "chinese": "谢谢你纠正我,我会进步。",
       "category": "Gratitude",
       "generated_at": "2026-08-03T23:11:37.237942"
+    },
+    {
+      "english": "Stay hopeful, study today, you will improve.",
+      "chinese": "别失望，今天学，你会进步。",
+      "category": "Hope",
+      "generated_at": "2026-08-04T00:50:34.279528"
+    },
+    {
+      "english": "Start small, keep going, hope stays with you.",
+      "chinese": "从小开始，坚持下去，希望在你身边。",
+      "category": "Hope",
+      "generated_at": "2026-08-04T00:50:34.279535"
+    },
+    {
+      "english": "Even slow practice, still counts, keep your hope.",
+      "chinese": "练得慢也算，坚持住，希望不会走。",
+      "category": "Hope",
+      "generated_at": "2026-08-04T00:50:34.279536"
+    },
+    {
+      "english": "Speak anyway, make it simple, hope wins.",
+      "chinese": "先说出来，别太复杂，希望会赢。",
+      "category": "Hope",
+      "generated_at": "2026-08-04T00:50:34.279537"
+    },
+    {
+      "english": "Mistakes are steps, learn one, stay hopeful.",
+      "chinese": "错误是台阶，学会一个，再保持希望。",
+      "category": "Hope",
+      "generated_at": "2026-08-04T00:50:34.279537"
     }
   ],
-  "last_updated": "2026-08-03T23:11:37.237944"
+  "last_updated": "2026-08-04T00:50:34.279538"
 }
