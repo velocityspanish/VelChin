@@ -15029,7 +15029,37 @@
       "chinese": "轻轻笑一笑, 嘴巴继续动",
       "category": "Purpose",
       "generated_at": "2026-08-06T15:05:42.140323"
+    },
+    {
+      "english": "Smile first, ask for water, then point.",
+      "chinese": "先微笑, 问水, 再指一指.",
+      "category": "Joy",
+      "generated_at": "2026-08-07T00:35:51.476592"
+    },
+    {
+      "english": "Order boldly, use one number, confirm once.",
+      "chinese": "大胆点单, 用一个数, 再确认.",
+      "category": "Joy",
+      "generated_at": "2026-08-07T00:35:51.476603"
+    },
+    {
+      "english": "Check directions, ask left, then ask again.",
+      "chinese": "问路先, 问左, 再问一次.",
+      "category": "Joy",
+      "generated_at": "2026-08-07T00:35:51.476604"
+    },
+    {
+      "english": "Pay with calm, say thank you, go.",
+      "chinese": "付钱别急, 说谢谢, 就走.",
+      "category": "Joy",
+      "generated_at": "2026-08-07T00:35:51.476605"
+    },
+    {
+      "english": "When lost, ask, excuse me, start again.",
+      "chinese": "迷路就问, 打扰一下, 再来.",
+      "category": "Joy",
+      "generated_at": "2026-08-07T00:35:51.476606"
     }
   ],
-  "last_updated": "2026-08-06T15:05:42.140325"
+  "last_updated": "2026-08-07T00:35:51.476607"
 }
