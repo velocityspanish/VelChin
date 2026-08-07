@@ -15089,7 +15089,37 @@
       "chinese": "卡住了, 深呼吸, 然后说",
       "category": "Perseverance",
       "generated_at": "2026-08-07T01:32:10.531231"
+    },
+    {
+      "english": "You can do it, start with one word",
+      "chinese": "你可以的, 先从一个词开始",
+      "category": "Motivation",
+      "generated_at": "2026-08-07T03:53:27.811712"
+    },
+    {
+      "english": "Stop translating, speak it now, slowly",
+      "chinese": "别翻译了, 现在说, 慢慢来",
+      "category": "Motivation",
+      "generated_at": "2026-08-07T03:53:27.811725"
+    },
+    {
+      "english": "Don’t aim perfect, make it clear, again",
+      "chinese": "别追求完美, 说清楚, 再来一次",
+      "category": "Motivation",
+      "generated_at": "2026-08-07T03:53:27.811727"
+    },
+    {
+      "english": "Your tones matter, practice today, not tomorrow",
+      "chinese": "声调很重要, 今天练, 别等明天",
+      "category": "Motivation",
+      "generated_at": "2026-08-07T03:53:27.811729"
+    },
+    {
+      "english": "Breathe, then ask, what does this mean",
+      "chinese": "先呼吸, 再问, 这是什么意思",
+      "category": "Motivation",
+      "generated_at": "2026-08-07T03:53:27.811730"
     }
   ],
-  "last_updated": "2026-08-07T01:32:10.531233"
+  "last_updated": "2026-08-07T03:53:27.811732"
 }
