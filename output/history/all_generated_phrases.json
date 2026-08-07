@@ -15149,7 +15149,37 @@
       "chinese": "别取消, 说我今天很忙",
       "category": "Friendship",
       "generated_at": "2026-08-07T14:04:52.162331"
+    },
+    {
+      "english": "Say it now, you can try again,",
+      "chinese": "现在说出来, 你可以再试一次,",
+      "category": "Confidence",
+      "generated_at": "2026-08-07T16:47:20.567121"
+    },
+    {
+      "english": "Make eye contact, speak slowly, keep moving,",
+      "chinese": "看着对方, 慢慢说, 继续走,",
+      "category": "Confidence",
+      "generated_at": "2026-08-07T16:47:20.567134"
+    },
+    {
+      "english": "Confident voice, short words, then smile,",
+      "chinese": "自信开口, 说短一点, 然后微笑,",
+      "category": "Confidence",
+      "generated_at": "2026-08-07T16:47:20.567136"
+    },
+    {
+      "english": "Ask for help, no shame, you’re learning,",
+      "chinese": "请帮我一下, 不要害羞, 你在学,",
+      "category": "Confidence",
+      "generated_at": "2026-08-07T16:47:20.567137"
+    },
+    {
+      "english": "Start with, I need, then point,",
+      "chinese": "先说我需要, 再指一下,",
+      "category": "Confidence",
+      "generated_at": "2026-08-07T16:47:20.567138"
     }
   ],
-  "last_updated": "2026-08-07T14:04:52.162333"
+  "last_updated": "2026-08-07T16:47:20.567140"
 }
